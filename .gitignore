@@ -3,3 +3,4 @@
 max
 *.profraw
 reports/TC*-patches
+reports/TC*json

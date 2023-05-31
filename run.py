@@ -13,12 +13,22 @@ def build_put(target):
 
 
 def generate_mutants(target: str, report_name: str, args: str):
+    ##! generate patches
     cmd = ""
     cmd += "mull-runner-12 --reporters=Patches --report-dir=reports "
     cmd += "--report-name=%s %s " % (report_name, target)
     cmd += "-test-program=python3 -- test_helper.py ./%s %s" % (target, args)
     print("[DEBUG] cmd:", cmd)
     os.system(cmd)
+
+    ##! create json file
+    cmd = ""
+    cmd += "mull-runner-12 --reporters=Elements --report-dir=reports "
+    cmd += "--report-name=%s %s " % (report_name, target)
+    cmd += "-test-program=python3 -- test_helper.py ./%s %s" % (target, args)
+    print("[DEBUG] cmd:", cmd)
+    os.system(cmd)
+    os.system("rm reports/%s.html" % (report_name))
 
 
 ##! TODO: Fix me
@@ -35,7 +45,7 @@ def test_max():
 
     args_list = [(3, 1), (5, -4), (0,-4), (0,7), (-1,3)]
     for idx, args in enumerate(args_list):
-        ##! TODO: Rename args
+        ##! TODO: Rename args and args_
         args_ = set_args_for_max(args)
         report_name = "TC" + str(idx + 1)
 
