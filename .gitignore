@@ -2,4 +2,4 @@
 
 max
 *.profraw
-TC*-patches
+reports/TC*-patches

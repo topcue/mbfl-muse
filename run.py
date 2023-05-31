@@ -3,10 +3,10 @@ import sys
 
 def build_put(target):
     cmd = ""
-    cmd += "clang-12 -fexperimental-new-pass-manager \\ "
-    cmd += "-fpass-plugin=/usr/lib/mull-ir-frontend-12 \\ "
-    cmd += "-g -grecord-command-line \\ "
-    cmd += "-fprofile-instr-generate -fcoverage-mapping \\ "
+    cmd += "clang-12 -fexperimental-new-pass-manager "
+    cmd += "-fpass-plugin=/usr/lib/mull-ir-frontend-12 "
+    cmd += "-g -grecord-command-line "
+    cmd += "-fprofile-instr-generate -fcoverage-mapping "
     cmd += "%s.c -o %s" % (target, target)
     print("[DEBUG] cmd:", cmd)
     os.system(cmd)
@@ -14,8 +14,8 @@ def build_put(target):
 
 def generate_mutants(target: str, report_name: str, args: str):
     cmd = ""
-    cmd += "mull-runner-12 --reporters=Patches \\ "
-    cmd += "--report-name=%s %s \\" % (report_name, target)
+    cmd += "mull-runner-12 --reporters=Patches --report-dir=reports "
+    cmd += "--report-name=%s %s " % (report_name, target)
     cmd += "-test-program=python3 -- test_helper.py ./%s %s" % (target, args)
     print("[DEBUG] cmd:", cmd)
     os.system(cmd)
