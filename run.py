@@ -23,24 +23,25 @@ def build_put(target):
     os.system(cmd)
 
 
-##! TODO: Fix this dump way in single run
-def generate_mutants_old(target: str, report_name: str, args: str):
-    ##! generate patches
-    cmd = ""
-    cmd += "mull-runner-12 --reporters=Patches --report-dir=reports "
-    cmd += "--report-name=%s %s " % (report_name, target)
-    cmd += "-test-program=python3 -- test_helper.py ./%s %s" % (target, args)
-    print("[DEBUG] cmd:", cmd)
-    os.system(cmd)
+##! deprecated
+# ##! TODO: Fix this dump way in single run
+# def generate_mutants_old(target: str, report_name: str, args: str):
+#     ##! generate patches
+#     cmd = ""
+#     cmd += "mull-runner-12 --reporters=Patches --report-dir=reports "
+#     cmd += "--report-name=%s %s " % (report_name, target)
+#     cmd += "-test-program=python3 -- test_helper.py ./%s %s" % (target, args)
+#     print("[DEBUG] cmd:", cmd)
+#     os.system(cmd)
 
-    ##! create json file
-    cmd = ""
-    cmd += "mull-runner-12 --reporters=Elements --report-dir=reports "
-    cmd += "--report-name=%s %s " % (report_name, target)
-    cmd += "-test-program=python3 -- test_helper.py ./%s %s" % (target, args)
-    print("[DEBUG] cmd:", cmd)
-    os.system(cmd)
-    os.system("rm reports/%s.html" % (report_name))
+#     ##! create json file
+#     cmd = ""
+#     cmd += "mull-runner-12 --reporters=Elements --report-dir=reports "
+#     cmd += "--report-name=%s %s " % (report_name, target)
+#     cmd += "-test-program=python3 -- test_helper.py ./%s %s" % (target, args)
+#     print("[DEBUG] cmd:", cmd)
+#     os.system(cmd)
+#     os.system("rm reports/%s.html" % (report_name))
 
 
 def generate_patches(target: str, report_name: str, args: str):
@@ -76,7 +77,6 @@ def set_args_for_max(args: tuple):
 #             print(f"line: {line_number}, Status: {status}")
 
 
-
 def pathces_line_number(file_name):
     pattern = r"-L(\d+)-"
     match = re.search(pattern, file_name)
@@ -87,7 +87,7 @@ def patch_and_build(target, report_name):
     ##! for test
     os.system("rm -rf ./mutants && mkdir -p mutants")
 
-    ##! mu0 means original code
+    ##! mu0: original code
     os.system("cp %s.c mutants/mu0.c" % (target))
     os.system("cp oracle_%s.c mutants/" % (target))
     ##! build mu0
@@ -129,6 +129,7 @@ def tmp(target, args_list):
         mu0_res = "P" if result.returncode == 0 else "F"
         print("[*] TC:", args)
 
+        ##! test mutants
         for idx_mu, mutant in enumerate(mutants):
             binary_path = "./mutants/%s" % (mutant)
             args_ = [str(args[0]), str(args[1])]
@@ -140,10 +141,6 @@ def tmp(target, args_list):
             else:
                 print()
             # print("[+] (TC, result) = (%s, %s))" % (args, ret))
-    
-
-    
-        
 
 
 ##! TODO: Fix me
@@ -162,23 +159,6 @@ def test_max():
     ##! build w/ patches
     patch_and_build(target, report_name)
     tmp(target, args_list)
-    
-
-    # foo(report_name)
-    # for idx, args in enumerate(args_list):
-    #     ##! TODO: Rename args and args_
-    #     args_ = set_args_for_max(args)
-    #     report_name = "TC" + str(idx + 1)
-
-    #     ##! run w/ mull-runner to generate mutants (patches and json file)
-    #     generate_mutants(target, report_name, args_)
-    
-    # for idx in range(len(args_list)):
-    #     report_name = "TC" + str(idx + 1)
-    #     foo(report_name)
-    #     ##! DEBUG: remove me
-    #     return
-
 
 
 def main():
