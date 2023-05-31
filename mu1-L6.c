@@ -3,7 +3,7 @@
 #include "oracle_max.c"
 
 int setmax(int x, int y) {
-    int max = -x; // should be 'max = x;'
+    int max = x; // should be 'max = x;'
     if (max < y) {
         max = y;
         if (x * y < 0) {
