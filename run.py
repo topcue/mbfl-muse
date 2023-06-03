@@ -166,21 +166,20 @@ class Muse():
         return executed_lines
 
 
-    def get_pf_table(self, test_cases):
+    def generate_table(self, test_cases):
+        # declare dictionary of using two keys: TC and line number
+        table = {}
+        coverage_table = {}
+        fail_to_pass = {}
+        pass_to_fail = {}
+        line_corpus = []
+
         mutants_dir_path = os.path.join(self.target_dir_path, "mutants")
         tmp_mutatns = get_file_names(mutants_dir_path)
         mutants = [ x for x in tmp_mutatns if x.endswith(".exec") ]
         mutants.remove("mu0.exec")
 
-        # declare dictionary of using two keys: TC and line number
-        table = {}
-
-        coverage_table = {}
-        fail_cover = {}
-        pass_cover = {}
-
-        fail_to_pass = {}
-        pass_to_fail = {}
+        
 
         ##! get line corpus
         line_corpus = []
@@ -232,12 +231,28 @@ class Muse():
                 else:
                     # print()
                     table[(test_case, mut, linenum)] = "      "
+        
+        self.table = table
+        self.coverage_table = coverage_table
+        self.fail_to_pass = fail_to_pass
+        self.pass_to_fail = pass_to_fail
+        self.line_corpus = line_corpus
 
-        # return
+
+    def print_table(self):
+        table = self.table
+        coverage_table = self.coverage_table
+        fail_to_pass = self.fail_to_pass
+        pass_to_fail = self.pass_to_fail
+        line_corpus = self.line_corpus
+
+        fail_cover = {}
+        pass_cover = {}
+
         print("\n\n[*] table:")
         for key, value in table.items():
             print("  %s: %s" % (key, value))
-
+        print("-" * 80)
         #print the dictionary as a table of line numbers by number of test cases
         
         #get every possible linenum from dictionary
@@ -277,7 +292,6 @@ class Muse():
             print("(%d, %d)" % (t[0], t[1]), end="\t")
         print()
 
-
         for l in linenum:
             mutants = []
 
@@ -306,6 +320,8 @@ class Muse():
                 count += 1
 
             print()
+        print("-" * 80)
+
         suspiciousness = {}
         for l in linenum:
             #get number of mutants
@@ -342,7 +358,7 @@ class Muse():
                 print("P->F: %d, F->P: %d" % (pass_to_fail[(l, mut)], fail_to_pass[(l, mut)]))
             print()
 
-        
+        print("-" * 80)
 
         print("  ", end="\t")
         for t in tc:
@@ -381,7 +397,9 @@ def test_max():
     muse_max.patch_and_build()
 
     ##! 4) get P/F table
-    muse_max.get_pf_table(test_cases)
+    muse_max.generate_table(test_cases)
+
+    muse_max.print_table()
 
 
 def test_quicksort():
