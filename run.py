@@ -191,7 +191,7 @@ class Muse():
         line_corpus = sorted(line_corpus, key=lambda x: int(x))
         print("line_corpus is: ", line_corpus)
     
-        for tc_idx, test_case in enumerate(test_cases):
+        for test_case in test_cases:
             ##! test mu0
             binary_path = os.path.join(mutants_dir_path, "mu0.exec")
             args_ = [str(test_case[0]), str(test_case[1])]
@@ -208,7 +208,7 @@ class Muse():
                     coverage_table[(test_case, line)] = "0"
         
             ##! test mutants
-            for idx_mu, mutant in enumerate(mutants):
+            for mutant in mutants:
                 # binary_path = "./mutants/%s" % (mutant)
                 binary_path = os.path.join(mutants_dir_path, mutant)
                 args_ = [str(test_case[0]), str(test_case[1])]
@@ -223,7 +223,6 @@ class Muse():
 
                 pass_to_fail[(linenum, mut)] = 0
                 fail_to_pass[(linenum, mut)] = 0
-
                 
                 if ret != mu0_res:
                     print("%s->%s" % (mu0_res, ret))
@@ -233,7 +232,7 @@ class Muse():
                     print()
                     table[(test_case, mut, linenum)] = "      "
 
-        print("[*] table:")
+        print("\n\n[*] table:")
         for key, value in table.items():
             print("  %s: %s" % (key, value))
 
@@ -245,8 +244,6 @@ class Muse():
             linenum.append(key[2])
         linenum = list(set(linenum))
         linenum = sorted(linenum, key=lambda x: int(x))
-
-        
 
 
         # make list of test cases
@@ -362,6 +359,7 @@ class Muse():
             print("%s" % (coverage_table[(t, "mu0")]), end="\t")
 
         print()
+
 
 ##! TODO: Fix me
 def test_max():
