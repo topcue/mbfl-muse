@@ -318,6 +318,13 @@ class Muse():
             print()
         print("-" * 80)
 
+        num_mut_P = len(table.keys()) // len(tc)
+        num_p2f = sum(pass_to_fail.values())
+        num_f2p = sum(fail_to_pass.values())
+        fP = sum(fail_cover.values())
+        pP = sum(pass_cover.values())
+        alpha = (num_f2p / (num_mut_P * fP)) * ((num_mut_P * pP) / num_p2f)
+
         suspiciousness = {}
         for l in linenum:
             #get number of mutants
@@ -328,16 +335,12 @@ class Muse():
             mutants = list(set(mutants))
             mutants = sorted(mutants)
             num_mutants = len(mutants)
-
             int_l = int(l)
 
             suspiciousness[int_l] = 0
-            ##! TODO:
-            alpha = 0.5
             for mut in mutants:
                 suspiciousness[int_l] += (fail_to_pass[(l, mut)]/fail_cover[int(l)] - alpha *  pass_to_fail[(l, mut)] / pass_cover[int(l)])
             suspiciousness[int_l] /= num_mutants
-
         #print pass_to_fail and fail_to_pass as a table
         for l in linenum:
             mutants = []
