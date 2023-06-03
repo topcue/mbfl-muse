@@ -132,19 +132,19 @@ class Muse():
         compile_command = ""
         compile_command += f"cd {mutants_dir_path}; "
         compile_command += f"gcc -fprofile-arcs -ftest-coverage {mutant_name}.c -o {mutant_name}_for_gcov.exec"
-        subprocess.run(compile_command, shell=True)
+        subprocess.run(compile_command, shell=True, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
         
         # Run the program
         run_command = ""
         run_command += f"cd {mutants_dir_path}; "
         run_command += f"./{mutant_name}_for_gcov.exec {test_case}"
-        subprocess.run(run_command, shell=True)
+        subprocess.run(run_command, shell=True, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
 
         # get cov
         gcov_command = ""
         gcov_command += f"cd {mutants_dir_path}; "
         gcov_command += f"gcov {mutant_name}.c"
-        subprocess.run(gcov_command, shell=True)
+        subprocess.run(gcov_command, shell=True, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
         
         # create a list of all the lines that were executed
         executed_lines = []
@@ -182,7 +182,7 @@ class Muse():
         fail_to_pass = {}
         pass_to_fail = {}
 
-
+        ##! get line corpus
         line_corpus = []
         for mut in mutants:
             mut = mut.replace(".exec", "")
@@ -195,7 +195,9 @@ class Muse():
             ##! test mu0
             binary_path = os.path.join(mutants_dir_path, "mu0.exec")
             args_ = [str(test_case[0]), str(test_case[1])]
-            result = subprocess.run([binary_path] + args_, capture_output=True)
+            # result = subprocess.run([binary_path] + args_, capture_output=True)
+            result = subprocess.run([binary_path] + args_, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
+
             mu0_res = "P" if result.returncode == 0 else "F"
             print("[*] TC:", test_case)
 
@@ -209,14 +211,13 @@ class Muse():
         
             ##! test mutants
             for mutant in mutants:
-                # binary_path = "./mutants/%s" % (mutant)
                 binary_path = os.path.join(mutants_dir_path, mutant)
                 args_ = [str(test_case[0]), str(test_case[1])]
-                result = subprocess.run([binary_path] + args_, capture_output=True)
-                print("binary_path is: ", binary_path)
+                # result = subprocess.run([binary_path] + args_, capture_output=True)
+                result = subprocess.run([binary_path] + args_, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
 
                 ret = "P" if result.returncode == 0 else "F"
-                print("  %s: " % (mutant), end="")
+                # print("  %s: " % (mutant), end="")
 
                 linenum = mutant.split("-")[1][1:].replace(".exec", "")
                 mut = mutant.split("-")[0]
@@ -225,13 +226,14 @@ class Muse():
                 fail_to_pass[(linenum, mut)] = 0
                 
                 if ret != mu0_res:
-                    print("%s->%s" % (mu0_res, ret))
+                    # print("%s->%s" % (mu0_res, ret))
                     # save printed value to dictionary
                     table[(test_case, mut, linenum)] = "%s->%s" % (mu0_res, ret)
                 else:
-                    print()
+                    # print()
                     table[(test_case, mut, linenum)] = "      "
 
+        # return
         print("\n\n[*] table:")
         for key, value in table.items():
             print("  %s: %s" % (key, value))
