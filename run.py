@@ -10,7 +10,7 @@ def get_file_names(dir_path):
     for path in os.listdir(dir_path):
         if os.path.isfile(os.path.join(dir_path, path)):
             file_names.append(path)
-    return file_names
+    return sorted(file_names)
 
 
 ##! TODO: Fix me
@@ -117,15 +117,40 @@ class Muse():
             os.system(cmd_compile)
 
 
+    def get_pf_table(self, test_cases):
+        mutants_dir_path = os.path.join(self.target_dir_path, "mutants")
+        tmp_mutatns = get_file_names(mutants_dir_path)
+        mutants = [ x for x in tmp_mutatns if x.endswith(".exec") ]
+        mutants.remove("mu0.exec")
 
+        for tc_idx, test_case in enumerate(test_cases):
+            ##! test mu0
+            binary_path = os.path.join(mutants_dir_path, "mu0.exec")
+            args_ = [str(test_case[0]), str(test_case[1])]
+            result = subprocess.run([binary_path] + args_, capture_output=True)
+            mu0_res = "P" if result.returncode == 0 else "F"
+            print("[*] TC:", test_case)
+
+            ##! test mutants
+            for idx_mu, mutant in enumerate(mutants):
+                binary_path = os.path.join(mutants_dir_path, mutant)
+                args_ = [str(test_case[0]), str(test_case[1])]
+                result = subprocess.run([binary_path] + args_, capture_output=True)
+                ret = "P" if result.returncode == 0 else "F"
+                print("  %s: " % (mutant), end="")
+                if ret != mu0_res:
+                    print("%s->%s" % (mu0_res, ret))
+                else:
+                    print()
+                # print("[+] (TC, result) = (%s, %s))" % (args, ret))
 
 
 ##! TODO: Fix me
 def test_max():
     ##! 0) set target and target path
     target = "max"
-    max_tc_list = [(3, 1), (5, -4), (0,-4), (0,7), (-1,3)]
-    muse_max = Muse(target, max_tc_list)
+    test_cases = [(3, 1), (5, -4), (0,-4), (0,7), (-1,3)]
+    muse_max = Muse(target, test_cases)
     
 
     ##! 1) build put w/ mull-lib
@@ -137,8 +162,8 @@ def test_max():
     ##! 3) build w/ patches
     muse_max.patch_and_build()
 
-
-    # tmp(target, args_list)
+    ##! 4) get P/F table
+    muse_max.get_pf_table(test_cases)
 
 
 def main():
