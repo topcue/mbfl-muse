@@ -172,6 +172,25 @@ class Muse():
         mutants = [ x for x in tmp_mutatns if x.endswith(".exec") ]
         mutants.remove("mu0.exec")
 
+        # declare dictionary of using two keys: TC and line number
+        table = {}
+
+        coverage_table = {}
+        fail_cover = {}
+        pass_cover = {}
+
+        fail_to_pass = {}
+        pass_to_fail = {}
+
+
+        line_corpus = []
+        for mut in mutants:
+            mut = mut.replace(".exec", "")
+            line_corpus.append(int(mut.split("-")[1][1:]))
+        line_corpus = list(set(line_corpus))
+        line_corpus = sorted(line_corpus, key=lambda x: int(x))
+        print("line_corpus is: ", line_corpus)
+    
         for tc_idx, test_case in enumerate(test_cases):
             ##! test mu0
             binary_path = os.path.join(mutants_dir_path, "mu0.exec")
@@ -180,21 +199,169 @@ class Muse():
             mu0_res = "P" if result.returncode == 0 else "F"
             print("[*] TC:", test_case)
 
+            executed_lines = self.get_covered_lines("mu0", " ".join(args_))
+            coverage_table[(test_case, "mu0")] = mu0_res
+            for line in line_corpus:
+                if line in executed_lines:
+                    coverage_table[(test_case, line)] = "1"
+                else:
+                    coverage_table[(test_case, line)] = "0"
+        
             ##! test mutants
             for idx_mu, mutant in enumerate(mutants):
-                executed_lines = self.get_covered_lines(mutant, "3 1") ##! TODO: fix me
-                continue
+                # binary_path = "./mutants/%s" % (mutant)
                 binary_path = os.path.join(mutants_dir_path, mutant)
                 args_ = [str(test_case[0]), str(test_case[1])]
                 result = subprocess.run([binary_path] + args_, capture_output=True)
+                print("binary_path is: ", binary_path)
+
                 ret = "P" if result.returncode == 0 else "F"
                 print("  %s: " % (mutant), end="")
+
+                linenum = mutant.split("-")[1][1:].replace(".exec", "")
+                mut = mutant.split("-")[0]
+
+                pass_to_fail[(linenum, mut)] = 0
+                fail_to_pass[(linenum, mut)] = 0
+
+                
                 if ret != mu0_res:
                     print("%s->%s" % (mu0_res, ret))
+                    # save printed value to dictionary
+                    table[(test_case, mut, linenum)] = "%s->%s" % (mu0_res, ret)
                 else:
                     print()
-                # print("[+] (TC, result) = (%s, %s))" % (args, ret))
+                    table[(test_case, mut, linenum)] = "      "
 
+        print("[*] table:")
+        for key, value in table.items():
+            print("  %s: %s" % (key, value))
+
+        #print the dictionary as a table of line numbers by number of test cases
+        
+        #get every possible linenum from dictionary
+        linenum = []
+        for key in table.keys():
+            linenum.append(key[2])
+        linenum = list(set(linenum))
+        linenum = sorted(linenum, key=lambda x: int(x))
+
+        
+
+
+        # make list of test cases
+        tc = []
+        for key in table.keys():
+            tc.append(key[0])
+        
+        for t in tc:
+            count = tc.count(t)
+            if count > 1:
+                for i in range(count-1):
+                    tc.remove(t)
+
+        for l in line_corpus:
+            pass_cov = 0
+            fail_cov = 0
+            for t in tc:
+                if coverage_table[(t, l)] == "1":
+                    if coverage_table[(t, "mu0")] == "P":
+                        pass_cov += 1
+                    else:
+                        fail_cov += 1
+            pass_cover[l] = pass_cov
+            fail_cover[l] = fail_cov
+                    
+        print("  ", end="\t")
+        print("  ", end="\t")
+        for t in tc:
+            print("(%d, %d)" % (t[0], t[1]), end="\t")
+        print()
+
+
+        for l in linenum:
+            mutants = []
+
+            for key, value in table.items():
+                if key[2] == l:
+                    mutants.append(key[1])
+            mutants = list(set(mutants))
+            mutants = sorted(mutants)
+            
+            count = 0
+            for mut in mutants:
+                if count == 0:
+                    print("  %s: " % (l), end="\t")
+                else:
+                    print("  %s: " % (" "), end="\t")
+                print("%s " % (mut), end="\t")
+                
+                for key, value in table.items():
+                    if key[2] == l and key[1] == mut:
+                        print("%s " % (value), end="\t")
+                        if value == "P->F":
+                            pass_to_fail[(key[2], key[1])] += 1
+                        elif value == "F->P":
+                            fail_to_pass[(key[2], key[1])] += 1
+                print()
+                count += 1
+
+            print()
+        suspiciousness = {}
+        for l in linenum:
+            #get number of mutants
+            mutants = []
+            for key, value in table.items():
+                if key[2] == l:
+                    mutants.append(key[1])
+            mutants = list(set(mutants))
+            mutants = sorted(mutants)
+            num_mutants = len(mutants)
+
+            int_l = int(l)
+
+            suspiciousness[int_l] = 0
+            ##! TODO:
+            alpha = 0.5
+            for mut in mutants:
+                suspiciousness[int_l] += (fail_to_pass[(l, mut)]/fail_cover[int(l)] - alpha *  pass_to_fail[(l, mut)] / pass_cover[int(l)])
+            suspiciousness[int_l] /= num_mutants
+
+        #print pass_to_fail and fail_to_pass as a table
+        for l in linenum:
+            mutants = []
+
+            for key, value in table.items():
+                if key[2] == l:
+                    mutants.append(key[1])
+            mutants = list(set(mutants))
+            mutants = sorted(mutants)
+
+            for mut in mutants:
+                print("  %s: " % (l), end="\t")
+                print("%s " % (mut), end="\t")
+                print("P->F: %d, F->P: %d" % (pass_to_fail[(l, mut)], fail_to_pass[(l, mut)]))
+            print()
+
+        
+
+        print("  ", end="\t")
+        for t in tc:
+            print("(%d, %d)" % (t[0], t[1]), end="\t")
+        print()
+
+        for l in line_corpus:
+            print("  %s: " % (l), end="\t")
+            for t in tc:
+                print("%s " % (coverage_table[(t, l)]), end="\t")
+            print("f_P(s): %s, p_P(s): %s, suspiciousness: %s" % (fail_cover[l], pass_cover[l], suspiciousness[l]))
+            print()
+        
+        print("  ", end="\t")
+        for t in tc:
+            print("%s" % (coverage_table[(t, "mu0")]), end="\t")
+
+        print()
 
 ##! TODO: Fix me
 def test_max():
