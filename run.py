@@ -84,7 +84,7 @@ class Muse():
         target_path = self.target_path
 
         ##! generate mutants dir
-        mutants_path = os.path.join(self.target_dir_path, "mutatns")
+        mutants_path = os.path.join(self.target_dir_path, "mutants")
         os.system("rm -rf %s && mkdir -p %s" % (mutants_path, mutants_path))
 
         ##! build mu0 (mu0: original code)

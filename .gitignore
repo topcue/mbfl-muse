@@ -2,7 +2,7 @@
 
 *.profraw
 
-targets/*/reports/*.exec
+targets/*/reports
 
 targets/*/*.exec
-targets/*/mutants/*.exec
+targets/*/mutants
