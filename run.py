@@ -12,14 +12,12 @@ def get_file_names(dir_path):
             file_names.append(path)
     return sorted(file_names)
 
-
 ##! TODO: Fix me
 def set_args_for_max(args: tuple):
     return " ".join(map(str, args))
 
 def set_args_for_quicksort(args: tuple):
     return " ".join(map(str, args))
-
 
 def pathces_line_number(file_name):
     pattern = r"-L(\d+)-"
@@ -179,8 +177,6 @@ class Muse():
         mutants = [ x for x in tmp_mutatns if x.endswith(".exec") ]
         mutants.remove("mu0.exec")
 
-        
-
         ##! get line corpus
         line_corpus = []
         for mut in mutants:
@@ -193,8 +189,8 @@ class Muse():
         for test_case in test_cases:
             ##! test mu0
             binary_path = os.path.join(mutants_dir_path, "mu0.exec")
-            args_ = [str(test_case[0]), str(test_case[1])]
-            # result = subprocess.run([binary_path] + args_, capture_output=True)
+            args_ = [str(arg) for arg in test_case]
+
             result = subprocess.run([binary_path] + args_, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
 
             mu0_res = "P" if result.returncode == 0 else "F"
@@ -377,50 +373,41 @@ class Muse():
             print("%s" % (coverage_table[(t, "mu0")]), end="\t")
 
         print()
+        print("-" * 80)
+
+
+def test(target, test_cases):
+    muse = Muse(target, test_cases)
+
+    ##! 1) build put w/ mull-lib
+    muse.build_put()
+
+    ##! 2) generate patches for mutants
+    muse.dry_run()
+
+    ##! 3) build w/ patches
+    muse.patch_and_build()
+
+    ##! 4) get P/F table
+    muse.generate_table(test_cases)
+
+    ##! 5) show table
+    muse.print_table()
 
 
 ##! TODO: Fix me
 def test_max():
-    ##! 0) set target and target path
     target = "max"
     test_cases = [(3, 1), (5, -4), (0,-4), (0,7), (-1,3)]
-    muse_max = Muse(target, test_cases)
-    
-
-    ##! 1) build put w/ mull-lib
-    muse_max.build_put()
-
-    ##! 2) generate patches for mutants
-    muse_max.dry_run()
-
-    ##! 3) build w/ patches
-    muse_max.patch_and_build()
-
-    ##! 4) get P/F table
-    muse_max.generate_table(test_cases)
-
-    muse_max.print_table()
+    test(target, test_cases)
 
 
 def test_quicksort():
-    ##! 0) set target and target path
     target = "quicksort"
-
     ##! TODO: Fix me
-    test_cases = [(3, 1), (5, 4)]
-    muse_max = Muse(target, test_cases)
-    
-    ##! 1) build put w/ mull-lib
-    muse_max.build_put()
+    test_cases = [(3, 1, 2, 3), (5, 4), (5, 4, 2, 1, 0, 6, 3), (2, 2)]
+    test(target, test_cases)
 
-    ##! 2) generate patches for mutants
-    muse_max.dry_run()
-
-    ##! 3) build w/ patches
-    muse_max.patch_and_build()
-
-    ##! 4) get P/F table
-    muse_max.get_pf_table(test_cases)
 
 def main():
     test_max()
