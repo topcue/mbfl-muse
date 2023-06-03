@@ -17,6 +17,9 @@ def get_file_names(dir_path):
 def set_args_for_max(args: tuple):
     return " ".join(map(str, args))
 
+def set_args_for_quicksort(args: tuple):
+    return " ".join(map(str, args))
+
 
 def pathces_line_number(file_name):
     pattern = r"-L(\d+)-"
@@ -54,7 +57,6 @@ class Muse():
         report_path = os.path.join(self.target_dir_path, "reports", report_name)
         target_bin_path = os.path.join(self.target_dir_path, self.target + ".exec")
 
-        # os.system("cp /home/topcue/mbfl-muse/mull.yml /home/topcue/mbfl-muse/targets/max/")
         ##! generate patches
         cmd = ""
         cmd += "mull-runner-12 --reporters=Patches --reporters=Elements "
@@ -74,7 +76,11 @@ class Muse():
         os.system("rm -rf %s && mkdir -p %s" % (reports_path, reports_path))
 
         tcs = self.tc_list
-        tc_for_dry_run = set_args_for_max(tcs[0])
+        ##! TODO: Fix me
+        if self.target == "max":
+            tc_for_dry_run = set_args_for_max(tcs[0])
+        elif self.target == "quicksort":
+            tc_for_dry_run = set_args_for_quicksort(tcs[0])
         report_name = "dry_run"
         self.generate_patches(report_name, tc_for_dry_run)
 
@@ -117,6 +123,49 @@ class Muse():
             os.system(cmd_compile)
 
 
+    ##! binary_path = "targets/max/mutants/mu0.exec"
+    def get_covered_lines(self, mutant, test_case):
+        mutants_dir_path = os.path.join(self.target_dir_path, "mutants")
+        mutant_name = os.path.splitext(mutant)[0]
+
+        # Compile the C program with gcov options
+        compile_command = ""
+        compile_command += f"cd {mutants_dir_path}; "
+        compile_command += f"gcc -fprofile-arcs -ftest-coverage {mutant_name}.c -o {mutant_name}_for_gcov.exec"
+        subprocess.run(compile_command, shell=True)
+        
+        # Run the program
+        run_command = ""
+        run_command += f"cd {mutants_dir_path}; "
+        run_command += f"./{mutant_name}_for_gcov.exec {test_case}"
+        subprocess.run(run_command, shell=True)
+
+        # get cov
+        gcov_command = ""
+        gcov_command += f"cd {mutants_dir_path}; "
+        gcov_command += f"gcov {mutant_name}.c"
+        subprocess.run(gcov_command, shell=True)
+        
+        # create a list of all the lines that were executed
+        executed_lines = []
+        gcov_file_path = f"{mutants_dir_path}/{mutant_name}.c.gcov"
+        with open(gcov_file_path, 'r') as f:
+            for line in f:
+                if line.startswith('    ######'):
+                    continue
+                line = line.strip()
+                line_number = line.split(':')[0]
+                if line_number != '-' and line_number[-1] != '#':
+                    executed_lines.append(int(line.split(':')[1]))
+
+        # delete created files
+        # wait for subprocess job to finish
+        ##! TODO
+        # subprocess.run("rm %s %s.gcda %s.gcno" % (binary_file, new_file_path[:-2], new_file_path[:-2]), shell=True)
+
+        return executed_lines
+
+
     def get_pf_table(self, test_cases):
         mutants_dir_path = os.path.join(self.target_dir_path, "mutants")
         tmp_mutatns = get_file_names(mutants_dir_path)
@@ -133,6 +182,8 @@ class Muse():
 
             ##! test mutants
             for idx_mu, mutant in enumerate(mutants):
+                executed_lines = self.get_covered_lines(mutant, "3 1") ##! TODO: fix me
+                continue
                 binary_path = os.path.join(mutants_dir_path, mutant)
                 args_ = [str(test_case[0]), str(test_case[1])]
                 result = subprocess.run([binary_path] + args_, capture_output=True)
@@ -166,9 +217,29 @@ def test_max():
     muse_max.get_pf_table(test_cases)
 
 
+def test_quicksort():
+    ##! 0) set target and target path
+    target = "quicksort"
+
+    ##! TODO: Fix me
+    test_cases = [(3, 1), (5, 4)]
+    muse_max = Muse(target, test_cases)
+    
+    ##! 1) build put w/ mull-lib
+    muse_max.build_put()
+
+    ##! 2) generate patches for mutants
+    muse_max.dry_run()
+
+    ##! 3) build w/ patches
+    muse_max.patch_and_build()
+
+    ##! 4) get P/F table
+    muse_max.get_pf_table(test_cases)
+
 def main():
     test_max()
-
+    # test_quicksort()
 
 if __name__ == "__main__":
     main()
