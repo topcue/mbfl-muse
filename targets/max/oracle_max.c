@@ -24,11 +24,11 @@ int oracle_max(int x, int y, int m) {
 
     if (m == answer) {
         // passed!
-        printf("passed!\n");
+        printf("[+] Test passed!\n");
         return 0;
     } else {
         // failed!
-        printf("failed!\n");
+        printf("[-] Test failed!\n");
         return -1;
     }
 }
