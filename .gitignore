@@ -1,7 +1,8 @@
 .vscode
 
-max
 *.profraw
-reports/TC*-patches
-reports/TC*json
-mutants/*
+
+targets/*/reports/*.exec
+
+targets/*/*.exec
+targets/*/mutants/*.exec
