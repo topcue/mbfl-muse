@@ -2,6 +2,7 @@
 
 *.profraw
 
+.Ds_Store
 */.Ds_Store
 
 targets/*/reports
