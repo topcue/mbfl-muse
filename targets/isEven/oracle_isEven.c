@@ -42,9 +42,9 @@ int main(int argc, char* argv[]) {
 
     printf("[*] (num) = (%d)\n", num);
 
-    int isEven = isEven(num);
+    int buggyResult = isEven(num);
 
-    return oracle_isEven(num, isEven);
+    return oracle_isEven(num, buggyResult);
 }
 
 // EOF

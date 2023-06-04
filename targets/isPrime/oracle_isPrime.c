@@ -52,9 +52,9 @@ int main(int argc, char* argv[]) {
 
     printf("[*] (num) = (%d)\n", num);
 
-    int isPrime = isPrime(num);
+    int buggyResult = isPrime(num);
     
-    return oracle_isPrime(num, isPrime);
+    return oracle_isPrime(num, buggyResult);
 }
 
 // EOF
