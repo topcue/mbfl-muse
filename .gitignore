@@ -2,6 +2,8 @@
 
 *.profraw
 
+*/.Ds_Store
+
 targets/*/reports
 
 targets/*/*.exec
