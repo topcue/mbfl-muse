@@ -1,6 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "stack.h"
+//#include "stack.h"
+
+// due to conflicts with header files, we explicitly put header file contents in oracle_.c file.
+typedef struct stack {
+    int top;
+    unsigned capacity;
+    int* array;
+} Stack;
+
+Stack* createStack(unsigned capacity);
+int isFull(Stack* stack);
+int isEmpty(Stack* stack);
+void push(Stack* stack, int item);
+int pop(Stack* stack);
 
 void init_pop(int argc, char* argv[], int* x, int* y) {
     if (argc != 3) {
