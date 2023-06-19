@@ -19,6 +19,18 @@ def set_args_for_max(args: tuple):
 def set_args_for_quicksort(args: tuple):
     return " ".join(map(str, args))
 
+def set_args_for_isPrime(args: int):
+    return str(args)
+
+def set_args_for_isEven(args: int):
+    return str(args)
+
+def set_args_for_getQuotient(args: tuple):
+    return " ".join(map(str, args))
+
+def set_args_for_stack(args: tuple):
+    return " ".join(map(str, args))
+
 def pathces_line_number(file_name):
     pattern = r"-L(\d+)-"
     match = re.search(pattern, file_name)
@@ -79,6 +91,15 @@ class Muse():
             tc_for_dry_run = set_args_for_max(tcs[0])
         elif self.target == "quicksort":
             tc_for_dry_run = set_args_for_quicksort(tcs[0])
+        elif self.target == "isPrime":
+            tc_for_dry_run = set_args_for_isPrime(tcs[0])
+        elif self.target == "isEven":
+            tc_for_dry_run = set_args_for_isEven(tcs[0])
+        elif self.target == "getQuotient":
+            tc_for_dry_run = set_args_for_getQuotient(tcs[0])
+        elif self.target == "stack":
+            tc_for_dry_run = set_args_for_stack(tcs[0])
+
         report_name = "dry_run"
         self.generate_patches(report_name, tc_for_dry_run)
 
@@ -433,12 +454,12 @@ def test_stack():
 
 
 def main():
-    test_max()
+    #test_max()
     # test_quicksort()
-    # test_isPrime()
-    # test_isEven()
-    # test_getQuotient()
-    # test_stack()
+    #test_isPrime() # not tested
+    # test_isEven() # not tested
+    # test_getQuotient() # ok
+    test_stack() # ok
 
 if __name__ == "__main__":
     main()

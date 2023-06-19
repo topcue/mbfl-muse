@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "stack.h"
+//#include "stack.h"
 #include "oracle_stack.c"
 
 // To compile: gcc stack.c -o stack
@@ -29,6 +29,6 @@ void push(Stack* stack, int item) {
 int pop(Stack* stack) {
     if (isEmpty(stack))
         return -1;
-    return stack->array[--stack->top];	//	should be [stack->top--]
+    return stack->array[--stack->top];	// should be [stack->top--]
 }
 
