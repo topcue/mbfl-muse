@@ -38,7 +38,7 @@ int main(int argc, char* argv[]) {
     init_max(argc, argv, &x, &y);
 
     printf("[*] (x, y) = (%d, %d)\n", x, y);
-
+    
     int max = setmax(x, y);
     
     return oracle_max(x, y, max);

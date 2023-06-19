@@ -14,9 +14,9 @@ void init_isEven(int argc, char* argv[], int* num) {
 int nonbuggyIsEven(int num) {
     int mod = num % 2;
     if (mod == 0)
-        return true;
+        return 1;
     else
-        return false;
+        return 0;
 }
 
 // manual oracle for isEven

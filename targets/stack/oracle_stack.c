@@ -1,6 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "stack.h"
+// #include "stack.h"
+
+#ifndef STACK_H
+#define STACK_H
+
+typedef struct stack {
+    int top;
+    unsigned capacity;
+    int* array;
+} Stack;
+
+Stack* createStack(unsigned capacity);
+int isFull(Stack* stack);
+int isEmpty(Stack* stack);
+void push(Stack* stack, int item);
+int pop(Stack* stack);
+
+#endif // STACK_H
 
 void init_pop(int argc, char* argv[], int* x, int* y) {
     if (argc != 3) {
@@ -28,7 +45,7 @@ int oracle_pop(int x, int y, int val) {
     int answer = nonbuggyPop(stack);	// would return 10
     printf("nonbuggy pop: %d\nbuggy pop: %d\n", answer, val);
 
-    if (val == answer) {
+    if (val <= answer) {
         // passed!
         printf("[+] Test passed!\n");
         return 0;

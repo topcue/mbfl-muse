@@ -19,6 +19,9 @@ def set_args_for_max(args: tuple):
 def set_args_for_quicksort(args: tuple):
     return " ".join(map(str, args))
 
+def set_args_for_sha256(args: tuple):
+    return "".join(map(str, args))
+
 def pathces_line_number(file_name):
     pattern = r"-L(\d+)-"
     match = re.search(pattern, file_name)
@@ -46,7 +49,7 @@ class Muse():
         cmd += "-fpass-plugin=/usr/lib/mull-ir-frontend-12 "
         cmd += "-g -grecord-command-line "
         cmd += "-fprofile-instr-generate -fcoverage-mapping "
-        cmd += "%s.c -o %s.exec" % (target_source_path, target_source_path)
+        cmd += "%s.c -lcrypto -o %s.exec" % (target_source_path, target_source_path)
         # print("[DEBUG] cmd:", cmd)
         os.system(cmd)
 
@@ -61,7 +64,7 @@ class Muse():
         cmd += "--ide-reporter-show-killed " ##! for debugging
         cmd += "--report-name=%s --report-dir=%s %s " % (report_name, report_path, target_bin_path)
         cmd += "-test-program=python3 -- test_helper.py ./%s %s" % (target_bin_path, args)
-        # print("[DEBUG] cmd:", cmd)
+        print("[DEBUG] cmd:", cmd)
         os.system(cmd)
         
         ##! clean up
@@ -75,10 +78,13 @@ class Muse():
 
         tcs = self.tc_list
         ##! TODO: Fix me
-        if self.target == "max":
+        if self.target in ("max", "getQuotient", "stack"):
             tc_for_dry_run = set_args_for_max(tcs[0])
         elif self.target == "quicksort":
             tc_for_dry_run = set_args_for_quicksort(tcs[0])
+        elif self.target in ("sha256", "bfs", "dijkstra", "isPrime", "isEven"):
+            tc_for_dry_run = set_args_for_sha256(tcs[0])
+        
         report_name = "dry_run"
         self.generate_patches(report_name, tc_for_dry_run)
 
@@ -95,7 +101,7 @@ class Muse():
         mu0_path = os.path.join(mutants_path, "mu0")
         os.system("cp %s.c %s.c" % (target_path, mu0_path))
         os.system("cp %s/oracle_%s.c %s" % (self.target_dir_path, target, mutants_path))
-        os.system("clang-12 %s.c -o %s.exec" % (mu0_path, mu0_path))
+        os.system("clang-12 %s.c -lcrypto -o %s.exec" % (mu0_path, mu0_path))
 
         ##! build mutants
         patches_dir_path = os.path.join(self.target_dir_path, "reports/dry_run/dry_run-patches") 
@@ -117,7 +123,7 @@ class Muse():
             ##! build mutant
             cmd_compile = ""
             cmd_compile += "cd %s; " % (mutants_path)
-            cmd_compile += "clang-12 %s.c -o %s.exec" % (mutant_name, mutant_name)
+            cmd_compile += "clang-12 %s.c -lcrypto -o %s.exec" % (mutant_name, mutant_name)
             os.system(cmd_compile)
 
 
@@ -129,9 +135,9 @@ class Muse():
         # Compile the C program with gcov options
         compile_command = ""
         compile_command += f"cd {mutants_dir_path}; "
-        compile_command += f"gcc -fprofile-arcs -ftest-coverage {mutant_name}.c -o {mutant_name}_for_gcov.exec"
+        compile_command += f"gcc -fprofile-arcs -ftest-coverage {mutant_name}.c -lcrypto -o {mutant_name}_for_gcov.exec"
         subprocess.run(compile_command, shell=True, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
-        
+
         # Run the program
         run_command = ""
         run_command += f"cd {mutants_dir_path}; "
@@ -179,24 +185,30 @@ class Muse():
 
         ##! get line corpus
         line_corpus = []
+
         for mut in mutants:
             mut = mut.replace(".exec", "")
             line_corpus.append(int(mut.split("-")[1][1:]))
         line_corpus = list(set(line_corpus))
         line_corpus = sorted(line_corpus, key=lambda x: int(x))
         print("line_corpus is: ", line_corpus)
-    
+
+
         for test_case in test_cases:
             ##! test mu0
             binary_path = os.path.join(mutants_dir_path, "mu0.exec")
             args_ = [str(arg) for arg in test_case]
+            if self.target == "sha256":
+                args_ = [test_case]
 
             result = subprocess.run([binary_path] + args_, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
 
             mu0_res = "P" if result.returncode == 0 else "F"
-            print("[*] TC:", test_case)
+            # print("[*] TC:", test_case)
+            # print("mu0_res:", mu0_res)
 
             executed_lines = self.get_covered_lines("mu0", " ".join(args_))
+            # print("executed_lines", executed_lines)
             coverage_table[(test_case, "mu0")] = mu0_res
             for line in line_corpus:
                 if line in executed_lines:
@@ -207,7 +219,14 @@ class Muse():
             ##! test mutants
             for mutant in mutants:
                 binary_path = os.path.join(mutants_dir_path, mutant)
-                args_ = [str(test_case[0]), str(test_case[1])]
+
+                args_ = []
+                for tc in test_case:
+                    args_.append(str(tc))
+                if self.target == "sha256":
+                    args_ = [test_case]
+                # args_ = [str(test_case[0]), str(test_case[1])]
+
                 # result = subprocess.run([binary_path] + args_, capture_output=True)
                 result = subprocess.run([binary_path] + args_, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
 
@@ -281,12 +300,15 @@ class Muse():
                         fail_cov += 1
             pass_cover[l] = pass_cov
             fail_cover[l] = fail_cov
-                    
-        print("  ", end="\t")
-        print("  ", end="\t")
-        for t in tc:
-            print("(%d, %d)" % (t[0], t[1]), end="\t")
-        print()
+        
+
+        # print("  ", end="\t")
+        # print("  ", end="\t")
+        # print("!@#")
+        # for t in tc:
+        #     # print("(%d, %d)" % (t[0], t[1]), end="\t")
+        #     print(f"({tc[0]}, {tc[1]})\t")
+        # print()
 
         for l in linenum:
             mutants = []
@@ -323,9 +345,15 @@ class Muse():
         num_f2p = sum(fail_to_pass.values())
         fP = sum(fail_cover.values())
         pP = sum(pass_cover.values())
+        print("[+] num_p2f", num_p2f)
+        print("[+] num_f2p", num_f2p)
+        print("[+] fP", fP)
+        print("[+] pP", pP)
         alpha = (num_f2p / (num_mut_P * fP)) * ((num_mut_P * pP) / num_p2f)
 
         suspiciousness = {}
+        for k, v in pass_cover.items():
+            print(k, v)
         for l in linenum:
             #get number of mutants
             mutants = []
@@ -339,7 +367,11 @@ class Muse():
 
             suspiciousness[int_l] = 0
             for mut in mutants:
-                suspiciousness[int_l] += (fail_to_pass[(l, mut)]/fail_cover[int(l)] - alpha *  pass_to_fail[(l, mut)] / pass_cover[int(l)])
+                fc = fail_cover[int(l)]
+                pc = pass_cover[int(l)]
+                if fc == 0: fc = 1
+                if pc == 0: pc = 1
+                suspiciousness[int_l] += (fail_to_pass[(l, mut)]/fc - alpha *  pass_to_fail[(l, mut)] / pc)
             suspiciousness[int_l] /= num_mutants
         #print pass_to_fail and fail_to_pass as a table
         for l in linenum:
@@ -359,10 +391,12 @@ class Muse():
 
         print("-" * 80)
 
-        print("  ", end="\t")
-        for t in tc:
-            print("(%d, %d)" % (t[0], t[1]), end="\t")
-        print()
+        # print("  ", end="\t")
+        # for t in tc:
+        #     # print("(%d, %d)" % (t[0], t[1]), end="\t")
+        #     print(f"({t[0]}, {t[1]})\t")
+
+        # print()
 
         for l in line_corpus:
             print("  %s: " % (l), end="\t")
@@ -401,30 +435,32 @@ def test(target, test_cases):
 ##! TODO: Fix me
 def test_max():
     target = "max"
-    test_cases = [(3, 1), (5, -4), (0,-4), (0,7), (-1,3)]
+    test_cases = [(3, 1), (5, -4), (0,-4), (0,7), (-1,3), (10, 3), (10, 10), (-1, -1), (1, 0)]
     test(target, test_cases)
 
 
 def test_quicksort():
     target = "quicksort"
     ##! TODO: Fix me
-    test_cases = [(3, 1, 2, 3), (5, 4), (5, 4, 2, 1, 0, 6, 3), (2, 2)]
+    test_cases = [(3, 1, 2, 3), (5, 4), (5, 4, 2, 1, 0, 6, 3), (2, 2), (3, 5, 1, 2, 3), (1, 2, 3, 4, 5, 6), (7, 6, 5, 4, 3, 2, 1)]
+    test(target, test_cases)
+
+def test_sha256():
+    target = "sha256"
+    test_cases = [("askdjklajfioecmiowecjodisbsvkbsaklvsidfvbasvbahjsdfvsavbnavlf"), ("abc"), ("a"), ("b"), ("c"), ("askdjklajfioecmiowecjodisbsvkbsaklvsidfvbasvbahjsdfvsavbnavlf"), ("askdjklajfioecmiowecjodisbsvkbsaklvsidfvbasvbahjsdfvs3123213"), ("askdjklajfioecmiowecjodisbsvkbsaklvsidfvbasvbahjsdfvsavbnavlfvasdfkvnfk")]
     test(target, test_cases)
 
 def test_isPrime():
     target = "isPrime"
-    test_cases = [2, 3, 8, 15, 17]
+    test_cases = [("2"), ("3"), ("8"), ("15"), ("17")]
     test(target, test_cases)
 
 def test_isEven():
     target = "isEven"
-    test_cases = [1, 2, 3, 4, 5]
+    test_cases = [("1"), ("2"), ("3"), ("4"), ("5")]
     test(target, test_cases)
 
-def test_getQuotient():
-    target = "getQuotient"
-    test_cases = [(14, 7), (2, 0), (0, 41), (12, 11), (12, 4)]
-    test(target, test_cases)
+
 
 def test_stack():
     target = "stack"
@@ -432,13 +468,45 @@ def test_stack():
     test(target, test_cases)
 
 
+def test_getQuotient():
+    target = "getQuotient"
+    test_cases = [(14, 7), (2, 0), (0, 41), (12, 11), (12, 4)]
+    test(target, test_cases)
+
+
+
+def test_bfs():
+    target = "bfs"
+    test_cases = [("0"), ("1"), ("2"), ("3"), ("4")]
+    test(target, test_cases)
+
+
+
+def test_dijkstra():
+    target = "dijkstra"
+    test_cases = [("0"), ("1"), ("2"), ("3"), ("4"), ("5")]
+    test(target, test_cases)
+
+
 def main():
-    test_max()
+    pass
+    # test_max()
+    # test_getQuotient()
+
     # test_quicksort()
+    # test_sha256()
+    
+
+
+    # test_stack()
+    test_bfs()
+    # test_dijkstra()
+
+    ##! discard
     # test_isPrime()
     # test_isEven()
-    # test_getQuotient()
-    # test_stack()
+
+
 
 if __name__ == "__main__":
     main()
