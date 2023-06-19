@@ -411,10 +411,34 @@ def test_quicksort():
     test_cases = [(3, 1, 2, 3), (5, 4), (5, 4, 2, 1, 0, 6, 3), (2, 2)]
     test(target, test_cases)
 
+def test_isPrime():
+    target = "isPrime"
+    test_cases = [2, 3, 8, 15, 17]
+    test(target, test_cases)
+
+def test_isEven():
+    target = "isEven"
+    test_cases = [1, 2, 3, 4, 5]
+    test(target, test_cases)
+
+def test_getQuotient():
+    target = "getQuotient"
+    test_cases = [(14, 7), (2, 0), (0, 41), (12, 11), (12, 4)]
+    test(target, test_cases)
+
+def test_stack():
+    target = "stack"
+    test_cases = [(2, 1), (10, 20), (20, 20), (42, 0), (0, 0)]
+    test(target, test_cases)
+
 
 def main():
     test_max()
     # test_quicksort()
+    # test_isPrime()
+    # test_isEven()
+    # test_getQuotient()
+    # test_stack()
 
 if __name__ == "__main__":
     main()
