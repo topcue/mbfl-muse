@@ -2,11 +2,6 @@
 #include <stdlib.h>
 #include "stack.h"
 
-int pop(Stack *stack);
-void push(Stack *stack, int val);
-int isEmpty(Stack *stack);
-Stack *createStack(unsigned capacity);
-
 void init_pop(int argc, char* argv[], int* x, int* y) {
     if (argc != 3) {
         printf("[-] usage: %s val1 val2\n", argv[0]);
