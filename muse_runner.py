@@ -12,14 +12,10 @@ def get_file_names(dir_path):
             file_names.append(path)
     return sorted(file_names)
 
-##! TODO: Fix me
-def set_args_for_max(args: tuple):
+def set_multiple_args(args: tuple):
     return " ".join(map(str, args))
 
-def set_args_for_quicksort(args: tuple):
-    return " ".join(map(str, args))
-
-def set_args_for_sha256(args: tuple):
+def set_single_args(args):
     return "".join(map(str, args))
 
 def pathces_line_number(file_name):
@@ -64,7 +60,7 @@ class Muse():
         cmd += "--ide-reporter-show-killed " ##! for debugging
         cmd += "--report-name=%s --report-dir=%s %s " % (report_name, report_path, target_bin_path)
         cmd += "-test-program=python3 -- test_helper.py ./%s %s" % (target_bin_path, args)
-        print("[DEBUG] cmd:", cmd)
+        # print("[DEBUG] cmd:", cmd)
         os.system(cmd)
         
         ##! clean up
@@ -77,13 +73,10 @@ class Muse():
         os.system("rm -rf %s && mkdir -p %s" % (reports_path, reports_path))
 
         tcs = self.tc_list
-        ##! TODO: Fix me
-        if self.target in ("max", "getQuotient", "stack"):
-            tc_for_dry_run = set_args_for_max(tcs[0])
-        elif self.target == "quicksort":
-            tc_for_dry_run = set_args_for_quicksort(tcs[0])
-        elif self.target in ("sha256", "bfs", "dijkstra", "isPrime", "isEven"):
-            tc_for_dry_run = set_args_for_sha256(tcs[0])
+        if type(tcs[0]) is tuple:
+            tc_for_dry_run = set_multiple_args(tcs[0])
+        else:
+            tc_for_dry_run = set_single_args(tcs[0])
         
         report_name = "dry_run"
         self.generate_patches(report_name, tc_for_dry_run)
@@ -162,11 +155,6 @@ class Muse():
                 if line_number != '-' and line_number[-1] != '#':
                     executed_lines.append(int(line.split(':')[1]))
 
-        # delete created files
-        # wait for subprocess job to finish
-        ##! TODO
-        # subprocess.run("rm %s %s.gcda %s.gcno" % (binary_file, new_file_path[:-2], new_file_path[:-2]), shell=True)
-
         return executed_lines
 
 
@@ -197,18 +185,16 @@ class Muse():
         for test_case in test_cases:
             ##! test mu0
             binary_path = os.path.join(mutants_dir_path, "mu0.exec")
-            args_ = [str(arg) for arg in test_case]
-            if self.target == "sha256":
+            if type(test_case) is tuple:
+                args_ = [str(arg) for arg in test_case]
+            else:
                 args_ = [test_case]
 
             result = subprocess.run([binary_path] + args_, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
 
             mu0_res = "P" if result.returncode == 0 else "F"
-            # print("[*] TC:", test_case)
-            # print("mu0_res:", mu0_res)
 
             executed_lines = self.get_covered_lines("mu0", " ".join(args_))
-            # print("executed_lines", executed_lines)
             coverage_table[(test_case, "mu0")] = mu0_res
             for line in line_corpus:
                 if line in executed_lines:
@@ -221,13 +207,11 @@ class Muse():
                 binary_path = os.path.join(mutants_dir_path, mutant)
 
                 args_ = []
-                for tc in test_case:
-                    args_.append(str(tc))
-                if self.target == "sha256":
+                if type(test_case) is tuple:
+                    for tc in test_case: args_.append(str(tc))
+                else:
                     args_ = [test_case]
-                # args_ = [str(test_case[0]), str(test_case[1])]
 
-                # result = subprocess.run([binary_path] + args_, capture_output=True)
                 result = subprocess.run([binary_path] + args_, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
 
                 ret = "P" if result.returncode == 0 else "F"
@@ -240,11 +224,9 @@ class Muse():
                 fail_to_pass[(linenum, mut)] = 0
                 
                 if ret != mu0_res:
-                    # print("%s->%s" % (mu0_res, ret))
                     # save printed value to dictionary
                     table[(test_case, mut, linenum)] = "%s->%s" % (mu0_res, ret)
                 else:
-                    # print()
                     table[(test_case, mut, linenum)] = "      "
         
         self.table = table
@@ -300,15 +282,6 @@ class Muse():
                         fail_cov += 1
             pass_cover[l] = pass_cov
             fail_cover[l] = fail_cov
-        
-
-        # print("  ", end="\t")
-        # print("  ", end="\t")
-        # print("!@#")
-        # for t in tc:
-        #     # print("(%d, %d)" % (t[0], t[1]), end="\t")
-        #     print(f"({tc[0]}, {tc[1]})\t")
-        # print()
 
         for l in linenum:
             mutants = []
@@ -345,10 +318,6 @@ class Muse():
         num_f2p = sum(fail_to_pass.values())
         fP = sum(fail_cover.values())
         pP = sum(pass_cover.values())
-        print("[+] num_p2f", num_p2f)
-        print("[+] num_f2p", num_f2p)
-        print("[+] fP", fP)
-        print("[+] pP", pP)
         alpha = (num_f2p / (num_mut_P * fP)) * ((num_mut_P * pP) / num_p2f)
 
         suspiciousness = {}
@@ -391,18 +360,11 @@ class Muse():
 
         print("-" * 80)
 
-        # print("  ", end="\t")
-        # for t in tc:
-        #     # print("(%d, %d)" % (t[0], t[1]), end="\t")
-        #     print(f"({t[0]}, {t[1]})\t")
-
-        # print()
-
         for l in line_corpus:
             print("  %s: " % (l), end="\t")
             for t in tc:
                 print("%s " % (coverage_table[(t, l)]), end="\t")
-            print("f_P(s): %s, p_P(s): %s, suspiciousness: %s" % (fail_cover[l], pass_cover[l], suspiciousness[l]))
+            print("f_P(s): %s, p_P(s): %s, suspiciousness: %s" % (fail_cover[l], pass_cover[l], round(suspiciousness[l], 4)))
             print()
         
         print("  ", end="\t")
@@ -432,22 +394,19 @@ def test(target, test_cases):
     muse.print_table()
 
 
-##! TODO: Fix me
 def test_max():
     target = "max"
     test_cases = [(3, 1), (5, -4), (0,-4), (0,7), (-1,3), (10, 3), (10, 10), (-1, -1), (1, 0)]
     test(target, test_cases)
 
-
 def test_quicksort():
     target = "quicksort"
-    ##! TODO: Fix me
     test_cases = [(3, 1, 2, 3), (5, 4), (5, 4, 2, 1, 0, 6, 3), (2, 2), (3, 5, 1, 2, 3), (1, 2, 3, 4, 5, 6), (7, 6, 5, 4, 3, 2, 1)]
     test(target, test_cases)
 
 def test_sha256():
     target = "sha256"
-    test_cases = [("askdjklajfioecmiowecjodisbsvkbsaklvsidfvbasvbahjsdfvsavbnavlf"), ("abc"), ("a"), ("b"), ("c"), ("askdjklajfioecmiowecjodisbsvkbsaklvsidfvbasvbahjsdfvsavbnavlf"), ("askdjklajfioecmiowecjodisbsvkbsaklvsidfvbasvbahjsdfvs3123213"), ("askdjklajfioecmiowecjodisbsvkbsaklvsidfvbasvbahjsdfvsavbnavlfvasdfkvnfk")]
+    test_cases = [("askdjklajfioecmiowecjodisbsvkbsaklvsidfvbasvbahjsdfvsavbnavlf"), ("abc"), ("a"), ("b"), ("c"), ("askdjklajfioecmiowecjodisbsvkbsaklvsidfvbasvbahjsdfvs3123213"), ("askdjklajfioecmiowecjodisbsvkbsaklvsidfvbasvbahjsdfvsavbnavlfvasdfkvnfk"), ("abcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabc"), ("abcdabcdabcdabcdabcdabcdabcdab")]
     test(target, test_cases)
 
 def test_isPrime():
@@ -460,27 +419,20 @@ def test_isEven():
     test_cases = [("1"), ("2"), ("3"), ("4"), ("5")]
     test(target, test_cases)
 
-
-
 def test_stack():
     target = "stack"
     test_cases = [(2, 1), (10, 20), (20, 20), (42, 0), (0, 0)]
     test(target, test_cases)
-
 
 def test_getQuotient():
     target = "getQuotient"
     test_cases = [(14, 7), (2, 0), (0, 41), (12, 11), (12, 4)]
     test(target, test_cases)
 
-
-
 def test_bfs():
     target = "bfs"
     test_cases = [("0"), ("1"), ("2"), ("3"), ("4")]
     test(target, test_cases)
-
-
 
 def test_dijkstra():
     target = "dijkstra"
@@ -489,23 +441,24 @@ def test_dijkstra():
 
 
 def main():
-    pass
-    # test_max()
-    # test_getQuotient()
-
-    # test_quicksort()
-    # test_sha256()
+    ##! TODO: remove me (for debuging)
+    target = sys.argv[1]
+    if target == "sha":
+        test_sha256()
+    elif target == "max":
+        test_max()
+    elif target == "quick":
+        test_quicksort()
+    else:
+        test_getQuotient()
     
-
-
     # test_stack()
-    test_bfs()
+    # test_bfs()
     # test_dijkstra()
 
     ##! discard
     # test_isPrime()
     # test_isEven()
-
 
 
 if __name__ == "__main__":
