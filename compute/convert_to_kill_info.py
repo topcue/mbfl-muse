@@ -1,5 +1,5 @@
 ## Read Stmt Information from mutants.log 
-with open('./Chart/1/mutants.log', 'r') as f:
+with open('../Chart_1/killmaps/Chart/1/mutants.log', 'r') as f:
     lines = f.readlines()
 
 result = {}
@@ -15,7 +15,7 @@ for line in lines:
 sorted_result = dict(sorted(result.items(), key=lambda x: x[0]))
 
 ## Read from killmap to collect runtime information
-with open('./Chart/1/killmap.csv', 'r') as f:
+with open('../Chart_1/killmaps/Chart/1/killmap.csv', 'r') as f:
     lines = f.readlines()
 
 with open('output.csv', 'w') as output_file:
