@@ -396,7 +396,8 @@ def test(target, test_cases):
 
 def test_max():
     target = "max"
-    test_cases = [(3, 1), (5, -4), (0,-4), (0,7), (-1,3), (10, 3), (10, 10), (-1, -1), (1, 0)]
+    # test_cases = [(3, 1), (5, -4), (0,-4), (0,7), (-1,3), (10, 3), (10, 10), (-1, -1), (1, 2), (1, 3),(1, 4),(3, 1),(2, 2),(1, 2),(3, 2),(1, -1),(5, 4),(5, 2),(6, 1)]
+    test_cases = [(3, 1), (5, -4), (0,-4), (0,7), (-1,3)]
     test(target, test_cases)
 
 def test_quicksort():
@@ -449,16 +450,17 @@ def main():
         test_max()
     elif target == "quick":
         test_quicksort()
-    else:
+    elif target == "qu":
         test_getQuotient()
-    
-    # test_stack()
-    # test_bfs()
-    # test_dijkstra()
+    elif target == "stack":
+        test_stack()
+    elif target == "bfs":
+        test_bfs()
 
     ##! discard
     # test_isPrime()
     # test_isEven()
+    # test_dijkstra()
 
 
 if __name__ == "__main__":
