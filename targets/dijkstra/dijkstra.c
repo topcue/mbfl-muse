@@ -5,7 +5,6 @@
 
 #define SIZE 6
 
-
 struct Graph {
   int numVertices;
   int** adjMatrix;
@@ -57,7 +56,7 @@ int* dijkstra(struct Graph* graph, int startVertex) {
 
     visited[minIndex] = 1;
     for (int j = 0; j < SIZE; j++)
-      if (!visited[j] && graph->adjMatrix[minIndex][j] && dist[minIndex] != INFINITY && dist[minIndex] +/*  should be "+""  */ graph->adjMatrix[minIndex][j] < dist[j])
+      if (!visited[j] && graph->adjMatrix[minIndex][j] && dist[minIndex] != INFINITY && dist[minIndex] -/*  should be "+""  */ graph->adjMatrix[minIndex][j] < dist[j])
         dist[j] = dist[minIndex] + graph->adjMatrix[minIndex][j];
   }
 
