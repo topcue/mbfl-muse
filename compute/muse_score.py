@@ -2,6 +2,7 @@ import os
 import re
 import pandas as pd
 from collections import Counter
+import rank_stmt
 
 #1. The number of mutants at each statement
 with open('../Chart_1/killmaps/Chart/1/mutants.log','r') as f:
@@ -170,6 +171,8 @@ for stmt in mut_states:
     
     muse_score[stmt] = susp_score
 
-sorted_muse_dict = dict(sorted(muse_score.items(), key=lambda x: x[1]))
+sorted_muse_dict = dict(sorted(muse_score.items(), key=lambda x: x[1], reverse=True))
 
-print(sorted_muse_dict)
+top_5 = list(sorted_muse_dict)[:5]
+
+rank_stmt.rank(top_5)
