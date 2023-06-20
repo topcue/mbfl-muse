@@ -40,7 +40,7 @@ fail_counts = Counter()
 for line in lines:
     parts = line.split(',')
     if parts[2].strip() == 'FAIL' or parts[2].strip() == 'CRASH' or parts[2].strip() == 'TIMEOUT':
-        fail_counts[parts[0]] += 1
+        fail_counts[int(parts[0])] += 1
 
 # Load the originally failed files
 with open('original_fail.csv', 'r') as f:
@@ -51,7 +51,7 @@ pass_counts = Counter()
 for line in lines:
     parts = line.split(',')
     if parts[2].strip() == 'PASS':
-        pass_counts[parts[0]] += 1
+        pass_counts[int(parts[0])] += 1
 
 
 sorted_fail_counts = dict(sorted(fail_counts.items(), key=lambda item: int(item[0])))
