@@ -6,6 +6,6 @@ def rank(top_n):
         for idx, line in enumerate(data):
             stmt_dict[idx+1] = line.strip()
     
-    for stmt_rank in top_n:
-        print(f'Rank {stmt_rank}: {stmt_dict[stmt_rank]}')
+    for idx,stmt_rank in enumerate(top_n):
+        print(f'Rank {idx+1}: {stmt_dict[stmt_rank]}')
 

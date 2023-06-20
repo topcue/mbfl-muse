@@ -48,26 +48,31 @@ ochiai_score = e_p * e_f / np.sqrt((e_p + n_p) * (e_f + n_f))
 jaccard_score = e_f / (e_p + e_f + n_f)
 
 # Rank from scores 
-top10_op2 = np.argsort(op2_score)
-top10_op2_indices = top10_op2[-10:]
+
+
+rank_stmt_op2 = np.argsort(op2_score)[::-1]
+top5_op2_indices = rank_stmt_op2[-5:]
+top5_op2_indices = top5_op2_indices + 1
 print('='*100)
 print('op2 ranking')
-rank_stmt.rank(top10_op2_indices)
+rank_stmt.rank(top5_op2_indices)
 print('='*100)
 
 # Rank from scores 
-top10_ochiai = np.argsort(ochiai_score)
-top10_ochiai_indices = top10_ochiai[-10:]
+rank_stmt_ochiai = np.argsort(ochiai_score)[::-1]
+top10_ochiai_indices = rank_stmt_ochiai[-5:]
+top10_ochiai_indices = top10_ochiai_indices + 1
 print('='*100)
 print('ochiai ranking')
 rank_stmt.rank(top10_ochiai_indices)
 print('='*100)
 
 # Rank from scores 
-top10_jaccard = np.argsort(jaccard_score)
-top10_jaccard_indices = top10_jaccard[-10:]
+rank_stmt_jaccard = np.argsort(jaccard_score)[::-1]
+rank_stmt_jaccard_indices = rank_stmt_jaccard[-5:]
+rank_stmt_jaccard_indices = rank_stmt_jaccard_indices + 1
 print('='*100)
 print('jaccard ranking')
-rank_stmt.rank(top10_jaccard_indices)
+rank_stmt.rank(rank_stmt_jaccard_indices)
 print('='*100)
 
