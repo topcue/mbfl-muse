@@ -1,5 +1,5 @@
 import numpy as np
-import pandas as pd
+import rank_stmt
 
 conversion_dict = {'+': 2, '-': -1}
 
@@ -53,3 +53,28 @@ n_f = failed_test.shape[0] - e_f
 op2_score = e_f - e_p / (e_p + n_p + 1)
 ochiai_score = e_p * e_f / np.sqrt((e_p + n_p) * (e_f + n_f))
 jaccard_score = e_f / (e_p + e_f + n_f)
+
+# Rank from scores 
+top10_op2 = np.argsort(op2_score)
+top10_op2_indices = top10_op2[-10:]
+print('='*100)
+print('op2 ranking')
+rank_stmt.rank(top10_op2_indices)
+print('='*100)
+
+# Rank from scores 
+top10_ochiai = np.argsort(ochiai_score)
+top10_ochiai_indices = top10_ochiai[-10:]
+print('='*100)
+print('ochiai ranking')
+rank_stmt.rank(top10_ochiai_indices)
+print('='*100)
+
+# Rank from scores 
+top10_jaccard = np.argsort(jaccard_score)
+top10_jaccard_indices = top10_jaccard[-10:]
+print('='*100)
+print('jaccard ranking')
+rank_stmt.rank(top10_jaccard_indices)
+print('='*100)
+
