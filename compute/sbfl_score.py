@@ -21,13 +21,6 @@ for line in lines:
 
 # Convert the list to numpy array
 np_arr = np.array(converted_list)
-num_columns = np_arr.shape[1]
-
-# Calculate Values 
-e_p = np.zeros((1, num_columns))
-e_f = np.zeros((1, num_columns))
-n_p = np.zeros((1, num_columns))
-n_f = np.zeros((1, num_columns))
 
 # Create an empty list to store the selected rows
 passed_test = []
