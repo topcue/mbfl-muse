@@ -1,0 +1,1805 @@
+Check out program version: Chart-1b........................................ OK
+Running ant (compile)...................................................... OK
+Running ant (compile.tests)................................................ OK
+Running ant (export.cp.test)............................................... OK
+
+Running ant (export.tests.trigger)......................................... OK
+
+Running ant (export.tests.relevant)........................................ OK
+
+Buildfile: /home/ec2-user/defects4j/framework/projects/defects4j.build.xml
+
+check.classes.uptodate:
+
+mutate:
+
+initialise:
+
+compile:
+    [mkdir] Created dir: /tmp/Chart-1/build
+    [javac] /home/ec2-user/defects4j/framework/projects/Chart/Chart.build.xml:56: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 654 source files to /tmp/Chart-1/build
+    [javac] Major: Mutation enabled using mml file: /tmp/Chart-1/.mml.bin.k73a
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.4
+    [javac] #Generated Mutants: 11238 (49796 ms)
+    [javac] Note: /tmp/Chart-1/source/org/jfree/chart/plot/XYPlot.java uses or overrides a deprecated API.
+    [javac] Note: Recompile with -Xlint:deprecation for details.
+    [javac] 1 warning
+     [copy] Copying 1 file to /tmp/Chart-1/build/org/jfree/chart
+     [copy] Copying 12 files to /tmp/Chart-1/build/org/jfree/chart
+     [copy] Copying 9 files to /tmp/Chart-1/build/org/jfree/chart/plot
+     [copy] Copying 10 files to /tmp/Chart-1/build/org/jfree/chart/editor
+     [copy] Copying 5 files to /tmp/Chart-1/build/org/jfree/chart/ui
+     [copy] Copying 1 file to /tmp/Chart-1/.classes_mutated
+
+BUILD SUCCESSFUL
+Total time: 1 minute 2 seconds
+[starting test 1/436: org.jfree.chart.renderer.category.junit.AbstractCategoryItemRendererTests#test2947660]
+Created worker with pid 2867
+[should take at most: 989 mutants (originally 989) * 852ms/mutant = 842.628s]
+worker exited without responding
+killing worker
+kill: sending signal to 2867 failed: No such process
+Warning: 'kill -9 2867' exited with status 1
+Created worker with pid 3287
+[actually took 107.931s; 0/989/0/1 pass/fail/timeout/crash]
+[covered 989 mutants]
+[255 mutants change behavior of triggering tests]
+[starting test 2/436: org.jfree.chart.axis.junit.LogAxisTests#testAutoRange1]
+[should take at most: 232 mutants (originally 1480) * 816ms/mutant = 189.312s]
+[actually took 26.609s; 14/219/0/0 pass/fail/timeout/crash]
+[starting test 3/436: org.jfree.chart.axis.junit.LogAxisTests#testAutoRange3]
+[should take at most: 237 mutants (originally 1437) * 804ms/mutant = 190.548s]
+[actually took 27.016s; 15/223/0/0 pass/fail/timeout/crash]
+[starting test 4/436: org.jfree.chart.axis.junit.LogAxisTests#testCloning]
+[should take at most: 0 mutants (originally 299) * 920ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 5/436: org.jfree.chart.axis.junit.LogAxisTests#testEquals]
+[should take at most: 0 mutants (originally 296) * 936ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 6/436: org.jfree.chart.axis.junit.LogAxisTests#testHashCode]
+[should take at most: 0 mutants (originally 293) * 936ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 7/436: org.jfree.chart.axis.junit.LogAxisTests#testSerialization]
+[should take at most: 0 mutants (originally 342) * 2062ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 8/436: org.jfree.chart.axis.junit.LogAxisTests#testSetLowerBound]
+[should take at most: 0 mutants (originally 213) * 904ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 9/436: org.jfree.chart.axis.junit.LogAxisTests#testTickMarksVisibleDefault]
+[should take at most: 0 mutants (originally 188) * 888ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 10/436: org.jfree.chart.axis.junit.LogAxisTests#testTranslateJava2DToValue]
+[should take at most: 0 mutants (originally 207) * 984ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 11/436: org.jfree.chart.axis.junit.LogAxisTests#testXYAutoRange1]
+[should take at most: 172 mutants (originally 937) * 792ms/mutant = 136.224s]
+worker exited without responding
+killing worker
+kill: sending signal to 3287 failed: No such process
+Warning: 'kill -9 3287' exited with status 1
+Created worker with pid 6036
+[actually took 20.108s; 3/169/0/1 pass/fail/timeout/crash]
+[starting test 12/436: org.jfree.chart.axis.junit.LogAxisTests#testXYAutoRange2]
+[should take at most: 172 mutants (originally 937) * 908ms/mutant = 156.176s]
+worker exited without responding
+killing worker
+kill: sending signal to 6036 failed: No such process
+Warning: 'kill -9 6036' exited with status 1
+Created worker with pid 6397
+[actually took 19.885s; 3/169/0/1 pass/fail/timeout/crash]
+[starting test 13/436: org.jfree.chart.axis.junit.NumberAxisTests#testAutoRange1]
+[should take at most: 232 mutants (originally 1453) * 732ms/mutant = 169.824s]
+[actually took 26.337s; 14/219/0/0 pass/fail/timeout/crash]
+[starting test 14/436: org.jfree.chart.axis.junit.NumberAxisTests#testAutoRange2]
+[should take at most: 232 mutants (originally 1398) * 840ms/mutant = 194.88s]
+[actually took 27.093s; 14/219/0/0 pass/fail/timeout/crash]
+[starting test 15/436: org.jfree.chart.axis.junit.NumberAxisTests#testAutoRange3]
+[should take at most: 237 mutants (originally 1412) * 872ms/mutant = 206.664s]
+worker exited without responding
+killing worker
+kill: sending signal to 6397 failed: No such process
+Warning: 'kill -9 6397' exited with status 1
+Created worker with pid 7774
+[actually took 30.124s; 15/222/0/1 pass/fail/timeout/crash]
+[starting test 16/436: org.jfree.chart.axis.junit.NumberAxisTests#testAutoRange4]
+[should take at most: 237 mutants (originally 1474) * 752ms/mutant = 178.224s]
+[actually took 26.87s; 15/223/0/0 pass/fail/timeout/crash]
+[starting test 17/436: org.jfree.chart.axis.junit.NumberAxisTests#testCloning]
+[should take at most: 0 mutants (originally 281) * 952ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 18/436: org.jfree.chart.axis.junit.NumberAxisTests#testEquals]
+[should take at most: 0 mutants (originally 298) * 968ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 19/436: org.jfree.chart.axis.junit.NumberAxisTests#testHashCode]
+[should take at most: 0 mutants (originally 276) * 936ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 20/436: org.jfree.chart.axis.junit.NumberAxisTests#testSerialization]
+[should take at most: 0 mutants (originally 324) * 700ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 21/436: org.jfree.chart.axis.junit.NumberAxisTests#testSetLowerBound]
+[should take at most: 0 mutants (originally 210) * 1000ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 22/436: org.jfree.chart.axis.junit.NumberAxisTests#testTranslateJava2DToValue]
+[should take at most: 0 mutants (originally 204) * 952ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 23/436: org.jfree.chart.axis.junit.NumberAxisTests#testXYAutoRange1]
+[should take at most: 172 mutants (originally 932) * 828ms/mutant = 142.416s]
+worker exited without responding
+killing worker
+kill: sending signal to 7774 failed: No such process
+Warning: 'kill -9 7774' exited with status 1
+Created worker with pid 8669
+[actually took 19.873s; 3/169/0/1 pass/fail/timeout/crash]
+[starting test 24/436: org.jfree.chart.axis.junit.NumberAxisTests#testXYAutoRange2]
+[should take at most: 172 mutants (originally 932) * 884ms/mutant = 152.048s]
+worker exited without responding
+killing worker
+kill: sending signal to 8669 failed: No such process
+Warning: 'kill -9 8669' exited with status 1
+Created worker with pid 9030
+[actually took 19.709s; 3/169/0/1 pass/fail/timeout/crash]
+[starting test 25/436: org.jfree.chart.axis.junit.SubCategoryAxisTests#test2275695]
+[should take at most: 209 mutants (originally 2739) * 2878ms/mutant = 601.502s]
+[actually took 23.854s; 13/197/0/0 pass/fail/timeout/crash]
+[starting test 26/436: org.jfree.chart.axis.junit.SubCategoryAxisTests#testCloning]
+[should take at most: 0 mutants (originally 213) * 928ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 27/436: org.jfree.chart.axis.junit.SubCategoryAxisTests#testEquals]
+[should take at most: 0 mutants (originally 204) * 928ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 28/436: org.jfree.chart.axis.junit.SubCategoryAxisTests#testHashCode]
+[should take at most: 0 mutants (originally 192) * 896ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 29/436: org.jfree.chart.axis.junit.SubCategoryAxisTests#testSerialization]
+[should take at most: 0 mutants (originally 296) * 912ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 30/436: org.jfree.chart.axis.junit.ValueAxisTests#testAxisMargins]
+[should take at most: 172 mutants (originally 940) * 780ms/mutant = 134.16s]
+worker exited without responding
+killing worker
+kill: sending signal to 9030 failed: No such process
+Warning: 'kill -9 9030' exited with status 1
+Created worker with pid 9820
+[actually took 19.733s; 3/169/0/1 pass/fail/timeout/crash]
+[starting test 31/436: org.jfree.chart.axis.junit.ValueAxisTests#testCloning]
+[should take at most: 0 mutants (originally 281) * 1032ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 32/436: org.jfree.chart.axis.junit.ValueAxisTests#testEquals]
+[should take at most: 0 mutants (originally 401) * 912ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 33/436: org.jfree.chart.junit.AreaChartTests#testDrawWithNullInfo]
+[should take at most: 237 mutants (originally 3195) * 1214ms/mutant = 287.718s]
+[actually took 28.118s; 12/226/0/0 pass/fail/timeout/crash]
+[starting test 34/436: org.jfree.chart.junit.AreaChartTests#testReplaceDataset]
+[should take at most: 237 mutants (originally 1397) * 1072ms/mutant = 254.064s]
+[actually took 28.277s; 15/223/0/0 pass/fail/timeout/crash]
+[starting test 35/436: org.jfree.chart.junit.AreaChartTests#testSetSeriesToolTipGenerator]
+[should take at most: 232 mutants (originally 1392) * 840ms/mutant = 194.88s]
+worker timed out without responding
+killing worker
+kill: sending signal to 9820 failed: No such process
+Warning: 'kill -9 9820' exited with status 1
+Created worker with pid 11151
+[actually took 29.65s; 14/218/0/1 pass/fail/timeout/crash]
+[starting test 36/436: org.jfree.chart.junit.AreaChartTests#testSetSeriesURLGenerator]
+[should take at most: 232 mutants (originally 1391) * 718ms/mutant = 166.576s]
+[actually took 27.009s; 14/219/0/0 pass/fail/timeout/crash]
+[starting test 37/436: org.jfree.chart.junit.BarChart3DTests#testDrawWithNullInfo]
+[should take at most: 237 mutants (originally 3385) * 1074ms/mutant = 254.538s]
+[actually took 30.151s; 12/226/0/0 pass/fail/timeout/crash]
+[starting test 38/436: org.jfree.chart.junit.BarChart3DTests#testReplaceDataset]
+[should take at most: 237 mutants (originally 1471) * 880ms/mutant = 208.56s]
+worker timed out without responding
+killing worker
+kill: sending signal to 11151 failed: No such process
+Warning: 'kill -9 11151' exited with status 1
+Created worker with pid 12449
+[actually took 30.517s; 15/222/0/1 pass/fail/timeout/crash]
+[starting test 39/436: org.jfree.chart.junit.BarChart3DTests#testSetSeriesToolTipGenerator]
+[should take at most: 232 mutants (originally 1466) * 734ms/mutant = 170.288s]
+[actually took 27.081s; 14/219/0/0 pass/fail/timeout/crash]
+[starting test 40/436: org.jfree.chart.junit.BarChart3DTests#testSetSeriesURLGenerator]
+[should take at most: 232 mutants (originally 1465) * 766ms/mutant = 177.712s]
+worker timed out without responding
+killing worker
+kill: sending signal to 12449 failed: No such process
+Warning: 'kill -9 12449' exited with status 1
+Created worker with pid 13747
+[actually took 29.014s; 14/218/0/1 pass/fail/timeout/crash]
+[starting test 41/436: org.jfree.chart.junit.BarChartTests#testDrawWithNullInfo]
+[should take at most: 237 mutants (originally 3527) * 1354ms/mutant = 320.898s]
+[actually took 29.052s; 12/226/0/0 pass/fail/timeout/crash]
+[starting test 42/436: org.jfree.chart.junit.BarChartTests#testReplaceDataset]
+[should take at most: 237 mutants (originally 1466) * 840ms/mutant = 199.08s]
+[actually took 28.053s; 15/223/0/0 pass/fail/timeout/crash]
+[starting test 43/436: org.jfree.chart.junit.BarChartTests#testSetSeriesToolTipGenerator]
+[should take at most: 232 mutants (originally 1461) * 828ms/mutant = 192.096s]
+worker timed out without responding
+killing worker
+kill: sending signal to 13747 failed: No such process
+Warning: 'kill -9 13747' exited with status 1
+Created worker with pid 15075
+[actually took 29.545s; 13/219/0/1 pass/fail/timeout/crash]
+[starting test 44/436: org.jfree.chart.junit.BarChartTests#testSetSeriesURLGenerator]
+[should take at most: 232 mutants (originally 1460) * 782ms/mutant = 181.424s]
+[actually took 26.909s; 14/219/0/0 pass/fail/timeout/crash]
+[starting test 45/436: org.jfree.chart.junit.ChartPanelTests#test2502355_restoreAutoBounds]
+[should take at most: 156 mutants (originally 921) * 1004ms/mutant = 156.624s]
+[actually took 17.289s; 21/136/0/0 pass/fail/timeout/crash]
+[starting test 46/436: org.jfree.chart.junit.ChartPanelTests#test2502355_restoreAutoDomainBounds]
+[should take at most: 156 mutants (originally 921) * 836ms/mutant = 130.416s]
+[actually took 17.213s; 21/136/0/0 pass/fail/timeout/crash]
+[starting test 47/436: org.jfree.chart.junit.ChartPanelTests#test2502355_restoreAutoRangeBounds]
+[should take at most: 156 mutants (originally 921) * 852ms/mutant = 132.912s]
+worker exited without responding
+killing worker
+kill: sending signal to 15075 failed: No such process
+Warning: 'kill -9 15075' exited with status 1
+Created worker with pid 16444
+[actually took 19.097s; 21/135/0/1 pass/fail/timeout/crash]
+[starting test 48/436: org.jfree.chart.junit.ChartPanelTests#test2502355_zoom]
+[should take at most: 156 mutants (originally 938) * 1072ms/mutant = 167.232s]
+[actually took 16.265s; 21/136/0/0 pass/fail/timeout/crash]
+[starting test 49/436: org.jfree.chart.junit.ChartPanelTests#test2502355_zoomInBoth]
+[should take at most: 156 mutants (originally 940) * 864ms/mutant = 134.784s]
+[actually took 16.537s; 21/136/0/0 pass/fail/timeout/crash]
+[starting test 50/436: org.jfree.chart.junit.ChartPanelTests#test2502355_zoomInDomain]
+[should take at most: 156 mutants (originally 940) * 812ms/mutant = 126.672s]
+[actually took 17.193s; 21/136/0/0 pass/fail/timeout/crash]
+[starting test 51/436: org.jfree.chart.junit.ChartPanelTests#test2502355_zoomInRange]
+[should take at most: 156 mutants (originally 940) * 824ms/mutant = 128.544s]
+worker timed out without responding
+killing worker
+kill: sending signal to 16444 failed: No such process
+Warning: 'kill -9 16444' exited with status 1
+Created worker with pid 17818
+[actually took 19.041s; 20/136/0/1 pass/fail/timeout/crash]
+[starting test 52/436: org.jfree.chart.junit.ChartPanelTests#test2502355_zoomOutBoth]
+[should take at most: 156 mutants (originally 940) * 1092ms/mutant = 170.352s]
+[actually took 16.481s; 21/136/0/0 pass/fail/timeout/crash]
+[starting test 53/436: org.jfree.chart.junit.ChartPanelTests#test2502355_zoomOutDomain]
+[should take at most: 156 mutants (originally 940) * 800ms/mutant = 124.8s]
+[actually took 16.257s; 21/136/0/0 pass/fail/timeout/crash]
+[starting test 54/436: org.jfree.chart.junit.ChartPanelTests#test2502355_zoomOutRange]
+[should take at most: 156 mutants (originally 940) * 808ms/mutant = 126.048s]
+[actually took 16.721s; 21/136/0/0 pass/fail/timeout/crash]
+[starting test 55/436: org.jfree.chart.junit.ChartPanelTests#testConstructor1]
+[should take at most: 1 mutants (originally 3) * 960ms/mutant = 0.96s]
+[actually took 0.072s; 1/1/0/0 pass/fail/timeout/crash]
+[starting test 56/436: org.jfree.chart.junit.ChartPanelTests#testGetListeners]
+[should take at most: 1 mutants (originally 3) * 976ms/mutant = 0.976s]
+[actually took 0.076s; 1/1/0/0 pass/fail/timeout/crash]
+[starting test 57/436: org.jfree.chart.junit.ChartPanelTests#testSetChart]
+[should take at most: 146 mutants (originally 471) * 864ms/mutant = 126.144s]
+[actually took 13.279s; 18/129/0/0 pass/fail/timeout/crash]
+[starting test 58/436: org.jfree.chart.junit.ChartPanelTests#testSetMouseWheelEnabled]
+[should take at most: 156 mutants (originally 903) * 840ms/mutant = 131.04s]
+worker timed out without responding
+killing worker
+Created worker with pid 19337
+[actually took 19.153s; 21/135/0/1 pass/fail/timeout/crash]
+[starting test 59/436: org.jfree.chart.junit.GanttChartTests#testDrawWithNullInfo]
+[should take at most: 209 mutants (originally 2692) * 1212ms/mutant = 253.308s]
+[actually took 24.676s; 13/197/0/0 pass/fail/timeout/crash]
+[starting test 60/436: org.jfree.chart.junit.GanttChartTests#testDrawWithNullInfo2]
+[should take at most: 227 mutants (originally 3414) * 1282ms/mutant = 291.014s]
+[actually took 28.909s; 14/214/0/0 pass/fail/timeout/crash]
+[starting test 61/436: org.jfree.chart.junit.GanttChartTests#testReplaceDataset]
+[should take at most: 213 mutants (originally 1331) * 812ms/mutant = 172.956s]
+worker timed out without responding
+killing worker
+Created worker with pid 20603
+[actually took 26.962s; 32/181/0/1 pass/fail/timeout/crash]
+[starting test 62/436: org.jfree.chart.junit.GanttChartTests#testSetSeriesToolTipGenerator]
+[should take at most: 208 mutants (originally 1334) * 1108ms/mutant = 230.464s]
+[actually took 23.25s; 13/196/0/0 pass/fail/timeout/crash]
+[starting test 63/436: org.jfree.chart.junit.GanttChartTests#testSetSeriesURLGenerator]
+[should take at most: 208 mutants (originally 1333) * 892ms/mutant = 185.536s]
+[actually took 24.35s; 13/196/0/0 pass/fail/timeout/crash]
+[starting test 64/436: org.jfree.chart.junit.JFreeChartTests#testAddSubtitle]
+[should take at most: 145 mutants (originally 610) * 760ms/mutant = 110.2s]
+worker timed out without responding
+killing worker
+kill: sending signal to 20603 failed: No such process
+Warning: 'kill -9 20603' exited with status 1
+Created worker with pid 21897
+[actually took 16.855s; 2/143/0/1 pass/fail/timeout/crash]
+[starting test 65/436: org.jfree.chart.junit.JFreeChartTests#testEquals]
+[should take at most: 146 mutants (originally 729) * 1016ms/mutant = 148.336s]
+[actually took 15.262s; 3/144/0/0 pass/fail/timeout/crash]
+[starting test 66/436: org.jfree.chart.junit.JFreeChartTests#testEquals2]
+[should take at most: 145 mutants (originally 611) * 764ms/mutant = 110.78s]
+[actually took 14.271s; 2/144/0/0 pass/fail/timeout/crash]
+[starting test 67/436: org.jfree.chart.junit.JFreeChartTests#testGetSubtitle]
+[should take at most: 145 mutants (originally 610) * 696ms/mutant = 100.92s]
+[actually took 14.871s; 2/144/0/0 pass/fail/timeout/crash]
+[starting test 68/436: org.jfree.chart.junit.JFreeChartTests#testGetSubtitles]
+[should take at most: 145 mutants (originally 610) * 780ms/mutant = 113.1s]
+[actually took 15.259s; 2/144/0/0 pass/fail/timeout/crash]
+[starting test 69/436: org.jfree.chart.junit.JFreeChartTests#testLegendEvents]
+[should take at most: 145 mutants (originally 610) * 736ms/mutant = 106.72s]
+[actually took 15.763s; 2/144/0/0 pass/fail/timeout/crash]
+[starting test 70/436: org.jfree.chart.junit.JFreeChartTests#testSerialization1]
+[should take at most: 146 mutants (originally 856) * 740ms/mutant = 108.04s]
+worker exited without responding
+killing worker
+kill: sending signal to 21897 failed: No such process
+Warning: 'kill -9 21897' exited with status 1
+Created worker with pid 23477
+[actually took 16.658s; 3/143/0/1 pass/fail/timeout/crash]
+[starting test 71/436: org.jfree.chart.junit.JFreeChartTests#testSerialization2]
+[should take at most: 146 mutants (originally 856) * 712ms/mutant = 103.952s]
+[actually took 14.478s; 3/144/0/0 pass/fail/timeout/crash]
+[starting test 72/436: org.jfree.chart.junit.JFreeChartTests#testSerialization3]
+[should take at most: 240 mutants (originally 2521) * 914ms/mutant = 219.36s]
+worker exited without responding
+killing worker
+kill: sending signal to 23477 failed: No such process
+Warning: 'kill -9 23477' exited with status 1
+Created worker with pid 24266
+[actually took 32.439s; 31/209/0/1 pass/fail/timeout/crash]
+[starting test 73/436: org.jfree.chart.junit.JFreeChartTests#testSerialization4]
+[should take at most: 179 mutants (originally 1712) * 976ms/mutant = 174.704s]
+worker exited without responding
+killing worker
+kill: sending signal to 24266 failed: No such process
+Warning: 'kill -9 24266' exited with status 1
+Created worker with pid 24763
+[actually took 22.97s; 21/158/0/1 pass/fail/timeout/crash]
+[starting test 74/436: org.jfree.chart.junit.JFreeChartTests#testSubtitleCount]
+[should take at most: 145 mutants (originally 610) * 776ms/mutant = 112.52s]
+[actually took 14.599s; 2/144/0/0 pass/fail/timeout/crash]
+[starting test 75/436: org.jfree.chart.junit.JFreeChartTests#testTitleChangeEvent]
+[should take at most: 145 mutants (originally 610) * 768ms/mutant = 111.36s]
+[actually took 14.707s; 2/144/0/0 pass/fail/timeout/crash]
+[starting test 76/436: org.jfree.chart.junit.LineChart3DTests#testDrawWithNullInfo]
+[should take at most: 237 mutants (originally 3187) * 1042ms/mutant = 246.954s]
+[actually took 30.65s; 12/226/0/0 pass/fail/timeout/crash]
+[starting test 77/436: org.jfree.chart.junit.LineChart3DTests#testReplaceDataset]
+[should take at most: 237 mutants (originally 1411) * 880ms/mutant = 208.56s]
+worker exited without responding
+killing worker
+kill: sending signal to 24763 failed: No such process
+Warning: 'kill -9 24763' exited with status 1
+Created worker with pid 26135
+[actually took 30.206s; 15/222/0/1 pass/fail/timeout/crash]
+[starting test 78/436: org.jfree.chart.junit.LineChart3DTests#testSetSeriesToolTipGenerator]
+[should take at most: 232 mutants (originally 1406) * 694ms/mutant = 161.008s]
+[actually took 27.146s; 14/219/0/0 pass/fail/timeout/crash]
+[starting test 79/436: org.jfree.chart.junit.LineChart3DTests#testSetSeriesURLGenerator]
+[should take at most: 232 mutants (originally 1405) * 924ms/mutant = 214.368s]
+[actually took 28.318s; 14/219/0/0 pass/fail/timeout/crash]
+[starting test 80/436: org.jfree.chart.junit.LineChartTests#testDrawWithNullInfo]
+[should take at most: 237 mutants (originally 3323) * 1134ms/mutant = 268.758s]
+[actually took 29.383s; 12/226/0/0 pass/fail/timeout/crash]
+[starting test 81/436: org.jfree.chart.junit.LineChartTests#testReplaceDataset]
+[should take at most: 237 mutants (originally 1411) * 824ms/mutant = 195.288s]
+[actually took 28.361s; 15/223/0/0 pass/fail/timeout/crash]
+[starting test 82/436: org.jfree.chart.junit.LineChartTests#testSetSeriesToolTipGenerator]
+[should take at most: 232 mutants (originally 1406) * 820ms/mutant = 190.24s]
+worker timed out without responding
+killing worker
+kill: sending signal to 26135 failed: No such process
+Warning: 'kill -9 26135' exited with status 1
+Created worker with pid 28464
+[actually took 29.553s; 14/218/0/1 pass/fail/timeout/crash]
+[starting test 83/436: org.jfree.chart.junit.LineChartTests#testSetSeriesURLGenerator]
+[should take at most: 232 mutants (originally 1405) * 1088ms/mutant = 252.416s]
+[actually took 27.114s; 14/219/0/0 pass/fail/timeout/crash]
+[starting test 84/436: org.jfree.chart.junit.PieChart3DTests#testNullValueInDataset]
+[should take at most: 146 mutants (originally 810) * 966ms/mutant = 141.036s]
+[actually took 15.65s; 2/145/0/0 pass/fail/timeout/crash]
+[starting test 85/436: org.jfree.chart.junit.PieChart3DTests#testReplaceDatasetOnPieChart]
+[should take at most: 145 mutants (originally 615) * 716ms/mutant = 103.82s]
+worker timed out without responding
+killing worker
+kill: sending signal to 28464 failed: No such process
+Warning: 'kill -9 28464' exited with status 1
+Created worker with pid 29854
+[actually took 16.327s; 2/143/0/1 pass/fail/timeout/crash]
+[starting test 86/436: org.jfree.chart.junit.PieChartTests#testReplaceDatasetOnPieChart]
+[should take at most: 145 mutants (originally 615) * 896ms/mutant = 129.92s]
+[actually took 14.883s; 2/144/0/0 pass/fail/timeout/crash]
+[starting test 87/436: org.jfree.chart.junit.ScatterPlotTests#testDrawWithNullInfo]
+[should take at most: 173 mutants (originally 1399) * 914ms/mutant = 158.122s]
+worker exited without responding
+killing worker
+kill: sending signal to 29854 failed: No such process
+Warning: 'kill -9 29854' exited with status 1
+Created worker with pid 30418
+[actually took 20.694s; 7/166/0/1 pass/fail/timeout/crash]
+[starting test 88/436: org.jfree.chart.junit.ScatterPlotTests#testReplaceDataset]
+[should take at most: 172 mutants (originally 931) * 964ms/mutant = 165.808s]
+worker exited without responding
+killing worker
+kill: sending signal to 30418 failed: No such process
+Warning: 'kill -9 30418' exited with status 1
+Created worker with pid 30809
+[actually took 20.161s; 3/169/0/1 pass/fail/timeout/crash]
+[starting test 89/436: org.jfree.chart.junit.ScatterPlotTests#testSetSeriesToolTipGenerator]
+[should take at most: 172 mutants (originally 930) * 912ms/mutant = 156.864s]
+worker exited without responding
+killing worker
+kill: sending signal to 30809 failed: No such process
+Warning: 'kill -9 30809' exited with status 1
+Created worker with pid 31205
+[actually took 19.841s; 6/166/0/1 pass/fail/timeout/crash]
+[starting test 90/436: org.jfree.chart.junit.StackedAreaChartTests#testDrawWithNullInfo]
+[should take at most: 237 mutants (originally 1946) * 1064ms/mutant = 252.168s]
+[actually took 28.752s; 12/226/0/0 pass/fail/timeout/crash]
+[starting test 91/436: org.jfree.chart.junit.StackedAreaChartTests#testReplaceDataset]
+[should take at most: 237 mutants (originally 1371) * 840ms/mutant = 199.08s]
+[actually took 28.906s; 15/223/0/0 pass/fail/timeout/crash]
+[starting test 92/436: org.jfree.chart.junit.StackedAreaChartTests#testSetSeriesToolTipGenerator]
+[should take at most: 232 mutants (originally 1366) * 876ms/mutant = 203.232s]
+worker exited without responding
+killing worker
+kill: sending signal to 31205 failed: No such process
+Warning: 'kill -9 31205' exited with status 1
+Created worker with pid 32679
+[actually took 29.806s; 14/218/0/1 pass/fail/timeout/crash]
+[starting test 93/436: org.jfree.chart.junit.StackedAreaChartTests#testSetSeriesURLGenerator]
+[should take at most: 232 mutants (originally 1365) * 710ms/mutant = 164.72s]
+[actually took 27.182s; 14/219/0/0 pass/fail/timeout/crash]
+[starting test 94/436: org.jfree.chart.junit.StackedBarChart3DTests#testDrawWithNullInfo]
+[should take at most: 237 mutants (originally 2008) * 898ms/mutant = 212.826s]
+[actually took 30.387s; 12/226/0/0 pass/fail/timeout/crash]
+[starting test 95/436: org.jfree.chart.junit.StackedBarChart3DTests#testReplaceDataset]
+[should take at most: 237 mutants (originally 1433) * 912ms/mutant = 216.144s]
+worker exited without responding
+killing worker
+kill: sending signal to 32679 failed: No such process
+Warning: 'kill -9 32679' exited with status 1
+Created worker with pid 1667
+[actually took 30.809s; 15/222/0/1 pass/fail/timeout/crash]
+[starting test 96/436: org.jfree.chart.junit.StackedBarChart3DTests#testSetSeriesToolTipGenerator]
+[should take at most: 232 mutants (originally 1428) * 750ms/mutant = 174.0s]
+[actually took 27.401s; 14/219/0/0 pass/fail/timeout/crash]
+[starting test 97/436: org.jfree.chart.junit.StackedBarChart3DTests#testSetSeriesURLGenerator]
+[should take at most: 232 mutants (originally 1427) * 912ms/mutant = 211.584s]
+worker timed out without responding
+killing worker
+kill: sending signal to 1667 failed: No such process
+Warning: 'kill -9 1667' exited with status 1
+Created worker with pid 3157
+[actually took 29.621s; 14/218/0/1 pass/fail/timeout/crash]
+[starting test 98/436: org.jfree.chart.junit.StackedBarChartTests#testDrawWithNullInfo]
+[should take at most: 237 mutants (originally 2013) * 1112ms/mutant = 263.544s]
+[actually took 28.915s; 12/226/0/0 pass/fail/timeout/crash]
+[starting test 99/436: org.jfree.chart.junit.StackedBarChartTests#testReplaceDataset]
+[should take at most: 237 mutants (originally 1438) * 868ms/mutant = 205.716s]
+[actually took 28.645s; 15/223/0/0 pass/fail/timeout/crash]
+[starting test 100/436: org.jfree.chart.junit.StackedBarChartTests#testSetSeriesToolTipGenerator]
+[should take at most: 232 mutants (originally 1433) * 900ms/mutant = 208.8s]
+worker exited without responding
+killing worker
+kill: sending signal to 3157 failed: No such process
+Warning: 'kill -9 3157' exited with status 1
+Created worker with pid 4631
+[actually took 30.113s; 14/218/0/1 pass/fail/timeout/crash]
+[starting test 101/436: org.jfree.chart.junit.StackedBarChartTests#testSetSeriesURLGenerator]
+[should take at most: 232 mutants (originally 1432) * 812ms/mutant = 188.384s]
+[actually took 26.724s; 14/219/0/0 pass/fail/timeout/crash]
+[starting test 102/436: org.jfree.chart.junit.StandardChartThemeTests#testCloning]
+[should take at most: 117 mutants (originally 419) * 832ms/mutant = 97.344s]
+[actually took 10.164s; 1/117/0/0 pass/fail/timeout/crash]
+[starting test 103/436: org.jfree.chart.junit.StandardChartThemeTests#testEquals]
+[should take at most: 117 mutants (originally 480) * 920ms/mutant = 107.64s]
+[actually took 10.115s; 1/117/0/0 pass/fail/timeout/crash]
+[starting test 104/436: org.jfree.chart.junit.StandardChartThemeTests#testSerialization]
+[should take at most: 117 mutants (originally 562) * 796ms/mutant = 93.132s]
+[actually took 10.471s; 1/117/0/0 pass/fail/timeout/crash]
+[starting test 105/436: org.jfree.chart.junit.TimeSeriesChartTests#testDrawWithNullInfo]
+[should take at most: 173 mutants (originally 1426) * 900ms/mutant = 155.7s]
+worker exited without responding
+killing worker
+kill: sending signal to 4631 failed: No such process
+Warning: 'kill -9 4631' exited with status 1
+Created worker with pid 6291
+[actually took 21.95s; 7/166/0/1 pass/fail/timeout/crash]
+[starting test 106/436: org.jfree.chart.junit.TimeSeriesChartTests#testReplaceDataset]
+[should take at most: 172 mutants (originally 958) * 1016ms/mutant = 174.752s]
+worker exited without responding
+killing worker
+kill: sending signal to 6291 failed: No such process
+Warning: 'kill -9 6291' exited with status 1
+Created worker with pid 6688
+[actually took 20.309s; 3/169/0/1 pass/fail/timeout/crash]
+[starting test 107/436: org.jfree.chart.junit.TimeSeriesChartTests#testSetSeriesToolTipGenerator]
+[should take at most: 172 mutants (originally 957) * 936ms/mutant = 160.992s]
+worker exited without responding
+killing worker
+kill: sending signal to 6688 failed: No such process
+Warning: 'kill -9 6688' exited with status 1
+Created worker with pid 7086
+[actually took 20.125s; 6/166/0/1 pass/fail/timeout/crash]
+[starting test 108/436: org.jfree.chart.junit.WaterfallChartTests#testDrawWithNullInfo]
+[should take at most: 237 mutants (originally 3402) * 1332ms/mutant = 315.684s]
+[actually took 28.841s; 12/226/0/0 pass/fail/timeout/crash]
+[starting test 109/436: org.jfree.chart.junit.WaterfallChartTests#testSetSeriesToolTipGenerator]
+[should take at most: 232 mutants (originally 1463) * 928ms/mutant = 215.296s]
+[actually took 27.705s; 14/219/0/0 pass/fail/timeout/crash]
+[starting test 110/436: org.jfree.chart.junit.WaterfallChartTests#testSetSeriesURLGenerator]
+[should take at most: 232 mutants (originally 1462) * 872ms/mutant = 202.304s]
+worker exited without responding
+killing worker
+kill: sending signal to 7086 failed: No such process
+Warning: 'kill -9 7086' exited with status 1
+Created worker with pid 8548
+[actually took 29.633s; 14/218/0/1 pass/fail/timeout/crash]
+[starting test 111/436: org.jfree.chart.junit.XYAreaChartTests#testDrawWithNullInfo]
+[should take at most: 173 mutants (originally 1340) * 924ms/mutant = 159.852s]
+worker exited without responding
+killing worker
+kill: sending signal to 8548 failed: No such process
+Warning: 'kill -9 8548' exited with status 1
+Created worker with pid 9054
+[actually took 21.01s; 7/166/0/1 pass/fail/timeout/crash]
+[starting test 112/436: org.jfree.chart.junit.XYAreaChartTests#testReplaceDataset]
+[should take at most: 172 mutants (originally 939) * 956ms/mutant = 164.432s]
+worker exited without responding
+killing worker
+kill: sending signal to 9054 failed: No such process
+Warning: 'kill -9 9054' exited with status 1
+Created worker with pid 9459
+[actually took 20.293s; 3/169/0/1 pass/fail/timeout/crash]
+[starting test 113/436: org.jfree.chart.junit.XYAreaChartTests#testSetSeriesToolTipGenerator]
+[should take at most: 172 mutants (originally 938) * 904ms/mutant = 155.488s]
+worker exited without responding
+killing worker
+kill: sending signal to 9459 failed: No such process
+Warning: 'kill -9 9459' exited with status 1
+Created worker with pid 9857
+[actually took 20.049s; 6/166/0/1 pass/fail/timeout/crash]
+[starting test 114/436: org.jfree.chart.junit.XYBarChartTests#testDrawWithNullInfo]
+[should take at most: 173 mutants (originally 1357) * 996ms/mutant = 172.308s]
+worker exited without responding
+killing worker
+kill: sending signal to 9857 failed: No such process
+Warning: 'kill -9 9857' exited with status 1
+Created worker with pid 10253
+[actually took 20.962s; 7/166/0/1 pass/fail/timeout/crash]
+[starting test 115/436: org.jfree.chart.junit.XYBarChartTests#testReplaceDataset]
+[should take at most: 172 mutants (originally 928) * 770ms/mutant = 132.44s]
+worker exited without responding
+killing worker
+kill: sending signal to 10253 failed: No such process
+Warning: 'kill -9 10253' exited with status 1
+Created worker with pid 10653
+[actually took 20.001s; 3/169/0/1 pass/fail/timeout/crash]
+[starting test 116/436: org.jfree.chart.junit.XYBarChartTests#testSetSeriesToolTipGenerator]
+[should take at most: 172 mutants (originally 926) * 980ms/mutant = 168.56s]
+worker exited without responding
+killing worker
+kill: sending signal to 10653 failed: No such process
+Warning: 'kill -9 10653' exited with status 1
+Created worker with pid 11052
+[actually took 20.161s; 6/166/0/1 pass/fail/timeout/crash]
+[starting test 117/436: org.jfree.chart.junit.XYLineChartTests#testDrawWithNullInfo]
+[should take at most: 173 mutants (originally 1399) * 974ms/mutant = 168.502s]
+worker exited without responding
+killing worker
+kill: sending signal to 11052 failed: No such process
+Warning: 'kill -9 11052' exited with status 1
+Created worker with pid 11452
+[actually took 21.102s; 7/166/0/1 pass/fail/timeout/crash]
+[starting test 118/436: org.jfree.chart.junit.XYLineChartTests#testReplaceDataset]
+[should take at most: 172 mutants (originally 931) * 1012ms/mutant = 174.064s]
+worker exited without responding
+killing worker
+kill: sending signal to 11452 failed: No such process
+Warning: 'kill -9 11452' exited with status 1
+Created worker with pid 11848
+[actually took 19.949s; 3/169/0/1 pass/fail/timeout/crash]
+[starting test 119/436: org.jfree.chart.junit.XYLineChartTests#testSetSeriesToolTipGenerator]
+[should take at most: 172 mutants (originally 930) * 960ms/mutant = 165.12s]
+worker exited without responding
+killing worker
+kill: sending signal to 11848 failed: No such process
+Warning: 'kill -9 11848' exited with status 1
+Created worker with pid 12251
+[actually took 19.969s; 6/166/0/1 pass/fail/timeout/crash]
+[starting test 120/436: org.jfree.chart.junit.XYStepAreaChartTests#testDrawWithNullInfo]
+[should take at most: 173 mutants (originally 1404) * 936ms/mutant = 161.928s]
+worker exited without responding
+killing worker
+kill: sending signal to 12251 failed: No such process
+Warning: 'kill -9 12251' exited with status 1
+Created worker with pid 12651
+[actually took 21.062s; 7/166/0/1 pass/fail/timeout/crash]
+[starting test 121/436: org.jfree.chart.junit.XYStepAreaChartTests#testReplaceDataset]
+[should take at most: 172 mutants (originally 931) * 1016ms/mutant = 174.752s]
+worker exited without responding
+killing worker
+kill: sending signal to 12651 failed: No such process
+Warning: 'kill -9 12651' exited with status 1
+Created worker with pid 13051
+[actually took 20.261s; 3/169/0/1 pass/fail/timeout/crash]
+[starting test 122/436: org.jfree.chart.junit.XYStepAreaChartTests#testSetSeriesToolTipGenerator]
+[should take at most: 172 mutants (originally 930) * 964ms/mutant = 165.808s]
+worker exited without responding
+killing worker
+kill: sending signal to 13051 failed: No such process
+Warning: 'kill -9 13051' exited with status 1
+Created worker with pid 13452
+[actually took 20.113s; 6/166/0/1 pass/fail/timeout/crash]
+[starting test 123/436: org.jfree.chart.junit.XYStepChartTests#testDrawWithNullInfo]
+[should take at most: 173 mutants (originally 1418) * 978ms/mutant = 169.194s]
+worker exited without responding
+killing worker
+kill: sending signal to 13452 failed: No such process
+Warning: 'kill -9 13452' exited with status 1
+Created worker with pid 13854
+[actually took 21.361s; 7/166/0/1 pass/fail/timeout/crash]
+[starting test 124/436: org.jfree.chart.junit.XYStepChartTests#testReplaceDataset]
+[should take at most: 172 mutants (originally 950) * 988ms/mutant = 169.936s]
+worker exited without responding
+killing worker
+kill: sending signal to 13854 failed: No such process
+Warning: 'kill -9 13854' exited with status 1
+Created worker with pid 14260
+[actually took 20.185s; 3/169/0/1 pass/fail/timeout/crash]
+[starting test 125/436: org.jfree.chart.junit.XYStepChartTests#testSetSeriesToolTipGenerator]
+[should take at most: 172 mutants (originally 949) * 1016ms/mutant = 174.752s]
+worker exited without responding
+killing worker
+kill: sending signal to 14260 failed: No such process
+Warning: 'kill -9 14260' exited with status 1
+Created worker with pid 14653
+[actually took 20.229s; 6/166/0/1 pass/fail/timeout/crash]
+[starting test 126/436: org.jfree.chart.plot.junit.CategoryPlotTests#test1169972]
+[should take at most: 230 mutants (originally 1248) * 880ms/mutant = 202.4s]
+[actually took 22.023s; 30/201/0/0 pass/fail/timeout/crash]
+[starting test 127/436: org.jfree.chart.plot.junit.CategoryPlotTests#test1654215]
+[should take at most: 228 mutants (originally 2774) * 982ms/mutant = 223.896s]
+[actually took 28.979s; 14/215/0/0 pass/fail/timeout/crash]
+[starting test 128/436: org.jfree.chart.plot.junit.CategoryPlotTests#testAddDomainMarker]
+[should take at most: 199 mutants (originally 758) * 824ms/mutant = 163.976s]
+[actually took 18.354s; 21/179/0/0 pass/fail/timeout/crash]
+[starting test 129/436: org.jfree.chart.plot.junit.CategoryPlotTests#testAddRangeMarker]
+[should take at most: 199 mutants (originally 756) * 816ms/mutant = 162.384s]
+worker exited without responding
+killing worker
+kill: sending signal to 14653 failed: No such process
+Warning: 'kill -9 14653' exited with status 1
+Created worker with pid 16511
+[actually took 19.83s; 21/178/0/1 pass/fail/timeout/crash]
+[starting test 130/436: org.jfree.chart.plot.junit.CategoryPlotTests#testAxisRange]
+[should take at most: 236 mutants (originally 1268) * 1040ms/mutant = 245.44s]
+[actually took 27.939s; 14/223/0/0 pass/fail/timeout/crash]
+[starting test 131/436: org.jfree.chart.plot.junit.CategoryPlotTests#testBug2817504]
+[should take at most: 208 mutants (originally 1388) * 832ms/mutant = 173.056s]
+[actually took 18.95s; 4/205/0/0 pass/fail/timeout/crash]
+[starting test 132/436: org.jfree.chart.plot.junit.CategoryPlotTests#testCloning]
+[should take at most: 199 mutants (originally 1062) * 1040ms/mutant = 206.96s]
+[actually took 18.416s; 21/179/0/0 pass/fail/timeout/crash]
+[starting test 133/436: org.jfree.chart.plot.junit.CategoryPlotTests#testCloning2]
+[should take at most: 199 mutants (originally 997) * 1064ms/mutant = 211.736s]
+[actually took 19.145s; 21/179/0/0 pass/fail/timeout/crash]
+[starting test 134/436: org.jfree.chart.plot.junit.CategoryPlotTests#testCloning3]
+[should take at most: 200 mutants (originally 1075) * 936ms/mutant = 187.2s]
+[actually took 19.104s; 21/180/0/0 pass/fail/timeout/crash]
+[starting test 135/436: org.jfree.chart.plot.junit.CategoryPlotTests#testConstructor]
+[should take at most: 199 mutants (originally 730) * 1096ms/mutant = 218.104s]
+[actually took 16.53s; 21/179/0/0 pass/fail/timeout/crash]
+[starting test 136/436: org.jfree.chart.plot.junit.CategoryPlotTests#testEquals]
+[should take at most: 213 mutants (originally 1962) * 1104ms/mutant = 235.152s]
+[actually took 18.911s; 8/206/0/0 pass/fail/timeout/crash]
+[starting test 137/436: org.jfree.chart.plot.junit.CategoryPlotTests#testGetDomainAxisForDataset]
+[should take at most: 221 mutants (originally 1224) * 904ms/mutant = 199.784s]
+[actually took 26.003s; 15/207/0/0 pass/fail/timeout/crash]
+[starting test 138/436: org.jfree.chart.plot.junit.CategoryPlotTests#testGetDomainAxisIndex]
+[should take at most: 203 mutants (originally 967) * 816ms/mutant = 165.648s]
+[actually took 19.753s; 17/187/0/0 pass/fail/timeout/crash]
+[starting test 139/436: org.jfree.chart.plot.junit.CategoryPlotTests#testGetRangeAxisForDataset]
+[should take at most: 221 mutants (originally 1178) * 1016ms/mutant = 224.536s]
+[actually took 26.16s; 15/207/0/0 pass/fail/timeout/crash]
+[starting test 140/436: org.jfree.chart.plot.junit.CategoryPlotTests#testGetRangeAxisIndex]
+[should take at most: 203 mutants (originally 977) * 896ms/mutant = 181.888s]
+[actually took 21.501s; 17/187/0/0 pass/fail/timeout/crash]
+[starting test 141/436: org.jfree.chart.plot.junit.CategoryPlotTests#testRemoveDomainMarker]
+[should take at most: 199 mutants (originally 722) * 792ms/mutant = 157.608s]
+worker exited without responding
+killing worker
+kill: sending signal to 16511 failed: No such process
+Warning: 'kill -9 16511' exited with status 1
+Created worker with pid 22141
+[actually took 19.386s; 21/178/0/1 pass/fail/timeout/crash]
+[starting test 142/436: org.jfree.chart.plot.junit.CategoryPlotTests#testRemoveRangeMarker]
+[should take at most: 199 mutants (originally 723) * 732ms/mutant = 145.668s]
+[actually took 17.942s; 21/179/0/0 pass/fail/timeout/crash]
+[starting test 143/436: org.jfree.chart.plot.junit.CategoryPlotTests#testSerialization]
+[should take at most: 229 mutants (originally 2253) * 806ms/mutant = 184.574s]
+worker exited without responding
+killing worker
+kill: sending signal to 22141 failed: No such process
+Warning: 'kill -9 22141' exited with status 1
+Created worker with pid 22838
+[actually took 30.991s; 32/197/0/1 pass/fail/timeout/crash]
+[starting test 144/436: org.jfree.chart.plot.junit.CategoryPlotTests#testSerialization2]
+[should take at most: 229 mutants (originally 2256) * 794ms/mutant = 181.826s]
+worker exited without responding
+killing worker
+kill: sending signal to 22838 failed: No such process
+Warning: 'kill -9 22838' exited with status 1
+Created worker with pid 23364
+[actually took 30.783s; 32/197/0/1 pass/fail/timeout/crash]
+[starting test 145/436: org.jfree.chart.plot.junit.CategoryPlotTests#testSerialization3]
+[should take at most: 234 mutants (originally 3300) * 1752ms/mutant = 409.968s]
+worker exited without responding
+killing worker
+kill: sending signal to 23364 failed: No such process
+Warning: 'kill -9 23364' exited with status 1
+Created worker with pid 23919
+[actually took 34.751s; 13/221/0/1 pass/fail/timeout/crash]
+[starting test 146/436: org.jfree.chart.plot.junit.CategoryPlotTests#testSerialization4]
+[should take at most: 234 mutants (originally 3905) * 1478ms/mutant = 345.852s]
+worker exited without responding
+killing worker
+kill: sending signal to 23919 failed: No such process
+Warning: 'kill -9 23919' exited with status 1
+Created worker with pid 24466
+[actually took 34.286s; 13/221/0/1 pass/fail/timeout/crash]
+[starting test 147/436: org.jfree.chart.plot.junit.CategoryPlotTests#testSerialization5]
+[should take at most: 233 mutants (originally 2326) * 898ms/mutant = 209.234s]
+worker exited without responding
+killing worker
+kill: sending signal to 24466 failed: No such process
+Warning: 'kill -9 24466' exited with status 1
+Created worker with pid 25013
+[actually took 32.118s; 12/221/0/1 pass/fail/timeout/crash]
+[starting test 148/436: org.jfree.chart.plot.junit.CategoryPlotTests#testSetRenderer]
+[should take at most: 208 mutants (originally 930) * 740ms/mutant = 153.92s]
+[actually took 18.517s; 23/186/0/0 pass/fail/timeout/crash]
+[starting test 149/436: org.jfree.chart.plot.junit.CombinedDomainCategoryPlotTests#testCloning]
+[should take at most: 232 mutants (originally 2091) * 976ms/mutant = 226.432s]
+[actually took 27.674s; 24/209/0/0 pass/fail/timeout/crash]
+[starting test 150/436: org.jfree.chart.plot.junit.CombinedDomainCategoryPlotTests#testEquals]
+[should take at most: 232 mutants (originally 1965) * 1008ms/mutant = 233.856s]
+[actually took 28.439s; 24/209/0/0 pass/fail/timeout/crash]
+[starting test 151/436: org.jfree.chart.plot.junit.CombinedDomainCategoryPlotTests#testNotification]
+[should take at most: 237 mutants (originally 3643) * 1334ms/mutant = 316.158s]
+[actually took 28.995s; 2/236/0/0 pass/fail/timeout/crash]
+[starting test 152/436: org.jfree.chart.plot.junit.CombinedDomainCategoryPlotTests#testRemoveSubplot]
+[should take at most: 199 mutants (originally 844) * 792ms/mutant = 157.608s]
+[actually took 18.494s; 21/179/0/0 pass/fail/timeout/crash]
+[starting test 153/436: org.jfree.chart.plot.junit.CombinedDomainCategoryPlotTests#testSerialization]
+[should take at most: 240 mutants (originally 2462) * 960ms/mutant = 230.4s]
+worker exited without responding
+killing worker
+kill: sending signal to 25013 failed: No such process
+Warning: 'kill -9 25013' exited with status 1
+Created worker with pid 27975
+[actually took 30.828s; 24/216/0/1 pass/fail/timeout/crash]
+[starting test 154/436: org.jfree.chart.plot.junit.CombinedRangeCategoryPlotTests#testCloning]
+[should take at most: 232 mutants (originally 2070) * 758ms/mutant = 175.856s]
+[actually took 26.278s; 24/209/0/0 pass/fail/timeout/crash]
+[starting test 155/436: org.jfree.chart.plot.junit.CombinedRangeCategoryPlotTests#testEquals]
+[should take at most: 232 mutants (originally 1952) * 840ms/mutant = 194.88s]
+[actually took 27.359s; 24/209/0/0 pass/fail/timeout/crash]
+[starting test 156/436: org.jfree.chart.plot.junit.CombinedRangeCategoryPlotTests#testNotification]
+[should take at most: 237 mutants (originally 3676) * 1342ms/mutant = 318.054s]
+[actually took 30.803s; 5/233/0/0 pass/fail/timeout/crash]
+[starting test 157/436: org.jfree.chart.plot.junit.CombinedRangeCategoryPlotTests#testRemoveSubplot]
+[should take at most: 203 mutants (originally 977) * 864ms/mutant = 175.392s]
+[actually took 18.709s; 24/180/0/0 pass/fail/timeout/crash]
+[starting test 158/436: org.jfree.chart.plot.junit.CombinedRangeCategoryPlotTests#testSerialization]
+[should take at most: 240 mutants (originally 2449) * 968ms/mutant = 232.32s]
+worker exited without responding
+killing worker
+kill: sending signal to 27975 failed: No such process
+Warning: 'kill -9 27975' exited with status 1
+Created worker with pid 30516
+[actually took 30.304s; 24/216/0/1 pass/fail/timeout/crash]
+[starting test 159/436: org.jfree.chart.plot.junit.MultiplePiePlotTests#testCloning]
+[should take at most: 127 mutants (originally 549) * 968ms/mutant = 122.936s]
+[actually took 14.067s; 2/126/0/0 pass/fail/timeout/crash]
+[starting test 160/436: org.jfree.chart.plot.junit.MultiplePiePlotTests#testConstructor]
+[should take at most: 140 mutants (originally 485) * 928ms/mutant = 129.92s]
+[actually took 15.427s; 6/135/0/0 pass/fail/timeout/crash]
+[starting test 161/436: org.jfree.chart.plot.junit.MultiplePiePlotTests#testEquals]
+[should take at most: 130 mutants (originally 691) * 716ms/mutant = 93.08s]
+[actually took 14.559s; 3/128/0/0 pass/fail/timeout/crash]
+[starting test 162/436: org.jfree.chart.plot.junit.MultiplePiePlotTests#testGetLegendItems]
+[should take at most: 152 mutants (originally 596) * 904ms/mutant = 137.408s]
+[actually took 13.135s; 2/151/0/0 pass/fail/timeout/crash]
+[starting test 163/436: org.jfree.chart.plot.junit.MultiplePiePlotTests#testSerialization]
+[should take at most: 128 mutants (originally 702) * 696ms/mutant = 89.088s]
+[actually took 13.99s; 3/126/0/0 pass/fail/timeout/crash]
+[starting test 164/436: org.jfree.chart.plot.junit.PiePlot3DTests#testDrawWithNullDataset]
+[should take at most: 130 mutants (originally 686) * 852ms/mutant = 110.76s]
+[actually took 13.807s; 2/129/0/0 pass/fail/timeout/crash]
+[starting test 165/436: org.jfree.chart.plot.junit.PiePlot3DTests#testEquals]
+[should take at most: 128 mutants (originally 573) * 752ms/mutant = 96.256s]
+[actually took 11.035s; 3/126/0/0 pass/fail/timeout/crash]
+[starting test 166/436: org.jfree.chart.plot.junit.PiePlot3DTests#testSerialization]
+[should take at most: 120 mutants (originally 675) * 928ms/mutant = 111.36s]
+worker exited without responding
+killing worker
+kill: sending signal to 30516 failed: No such process
+Warning: 'kill -9 30516' exited with status 1
+Created worker with pid 566
+[actually took 11.371s; 4/116/0/1 pass/fail/timeout/crash]
+[starting test 167/436: org.jfree.chart.plot.junit.PiePlotTests#testCloning]
+[should take at most: 119 mutants (originally 522) * 904ms/mutant = 107.576s]
+[actually took 12.271s; 3/117/0/0 pass/fail/timeout/crash]
+[starting test 168/436: org.jfree.chart.plot.junit.PiePlotTests#testCloning_LegendItemShape]
+[should take at most: 127 mutants (originally 541) * 864ms/mutant = 109.728s]
+[actually took 13.819s; 2/126/0/0 pass/fail/timeout/crash]
+[starting test 169/436: org.jfree.chart.plot.junit.PiePlotTests#testCloning_LegendLabelGenerator]
+[should take at most: 127 mutants (originally 541) * 752ms/mutant = 95.504s]
+[actually took 13.871s; 2/126/0/0 pass/fail/timeout/crash]
+[starting test 170/436: org.jfree.chart.plot.junit.PiePlotTests#testCloning_LegendLabelToolTipGenerator]
+[should take at most: 127 mutants (originally 541) * 712ms/mutant = 90.424s]
+[actually took 13.355s; 2/126/0/0 pass/fail/timeout/crash]
+[starting test 171/436: org.jfree.chart.plot.junit.PiePlotTests#testCloning_LegendLabelURLGenerator]
+[should take at most: 127 mutants (originally 541) * 720ms/mutant = 91.44s]
+[actually took 13.235s; 2/126/0/0 pass/fail/timeout/crash]
+[starting test 172/436: org.jfree.chart.plot.junit.PiePlotTests#testCloning_URLGenerator]
+[should take at most: 127 mutants (originally 541) * 752ms/mutant = 95.504s]
+[actually took 10.543s; 2/126/0/0 pass/fail/timeout/crash]
+[starting test 173/436: org.jfree.chart.plot.junit.PiePlotTests#testDrawWithNullLegendLabels]
+[should take at most: 146 mutants (originally 957) * 1278ms/mutant = 186.588s]
+[actually took 16.38s; 2/145/0/0 pass/fail/timeout/crash]
+[starting test 174/436: org.jfree.chart.plot.junit.PiePlotTests#testEquals]
+[should take at most: 128 mutants (originally 574) * 928ms/mutant = 118.784s]
+[actually took 11.031s; 3/126/0/0 pass/fail/timeout/crash]
+[starting test 175/436: org.jfree.chart.plot.junit.PiePlotTests#testGetBaseSectionPaint]
+[should take at most: 119 mutants (originally 430) * 736ms/mutant = 87.584s]
+[actually took 10.2s; 3/117/0/0 pass/fail/timeout/crash]
+[starting test 176/436: org.jfree.chart.plot.junit.PiePlotTests#testGetLegendItems]
+[should take at most: 152 mutants (originally 573) * 748ms/mutant = 113.696s]
+worker exited without responding
+killing worker
+kill: sending signal to 566 failed: No such process
+Warning: 'kill -9 566' exited with status 1
+Created worker with pid 3215
+[actually took 15.179s; 2/150/0/1 pass/fail/timeout/crash]
+[starting test 177/436: org.jfree.chart.plot.junit.PiePlotTests#testSerialization]
+[should take at most: 120 mutants (originally 675) * 856ms/mutant = 102.72s]
+[actually took 12.995s; 4/117/0/0 pass/fail/timeout/crash]
+[starting test 178/436: org.jfree.chart.plot.junit.XYPlotTests#test1654215]
+[should take at most: 157 mutants (originally 1531) * 886ms/mutant = 139.102s]
+[actually took 17.521s; 5/153/0/0 pass/fail/timeout/crash]
+[starting test 179/436: org.jfree.chart.plot.junit.XYPlotTests#testAddDomainMarker]
+[should take at most: 146 mutants (originally 472) * 728ms/mutant = 106.288s]
+[actually took 12.455s; 18/129/0/0 pass/fail/timeout/crash]
+[starting test 180/436: org.jfree.chart.plot.junit.XYPlotTests#testAddRangeMarker]
+[should take at most: 146 mutants (originally 472) * 744ms/mutant = 108.624s]
+[actually took 12.539s; 18/129/0/0 pass/fail/timeout/crash]
+[starting test 181/436: org.jfree.chart.plot.junit.XYPlotTests#testBug2817504]
+[should take at most: 151 mutants (originally 856) * 920ms/mutant = 138.92s]
+[actually took 13.642s; 1/151/0/0 pass/fail/timeout/crash]
+[starting test 182/436: org.jfree.chart.plot.junit.XYPlotTests#testCloneIndependence]
+[should take at most: 155 mutants (originally 1225) * 744ms/mutant = 115.32s]
+[actually took 18.003s; 4/152/0/0 pass/fail/timeout/crash]
+[starting test 183/436: org.jfree.chart.plot.junit.XYPlotTests#testCloning]
+[should take at most: 146 mutants (originally 578) * 776ms/mutant = 113.296s]
+[actually took 15.371s; 18/129/0/0 pass/fail/timeout/crash]
+[starting test 184/436: org.jfree.chart.plot.junit.XYPlotTests#testCloning2]
+[should take at most: 155 mutants (originally 1169) * 920ms/mutant = 142.6s]
+[actually took 15.912s; 21/135/0/0 pass/fail/timeout/crash]
+[starting test 185/436: org.jfree.chart.plot.junit.XYPlotTests#testCloning3]
+[should take at most: 156 mutants (originally 1215) * 944ms/mutant = 147.264s]
+[actually took 16.607s; 21/136/0/0 pass/fail/timeout/crash]
+[starting test 186/436: org.jfree.chart.plot.junit.XYPlotTests#testCloning4]
+[should take at most: 155 mutants (originally 1149) * 928ms/mutant = 143.84s]
+[actually took 16.572s; 4/152/0/0 pass/fail/timeout/crash]
+[starting test 187/436: org.jfree.chart.plot.junit.XYPlotTests#testCloning_QuadrantOrigin]
+[should take at most: 146 mutants (originally 579) * 720ms/mutant = 105.12s]
+[actually took 12.687s; 18/129/0/0 pass/fail/timeout/crash]
+[starting test 188/436: org.jfree.chart.plot.junit.XYPlotTests#testCloning_QuadrantPaint]
+[should take at most: 146 mutants (originally 579) * 744ms/mutant = 108.624s]
+[actually took 15.927s; 18/129/0/0 pass/fail/timeout/crash]
+[starting test 189/436: org.jfree.chart.plot.junit.XYPlotTests#testDrawRangeGridlines]
+[should take at most: 157 mutants (originally 1533) * 792ms/mutant = 124.344s]
+[actually took 16.341s; 5/153/0/0 pass/fail/timeout/crash]
+[starting test 190/436: org.jfree.chart.plot.junit.XYPlotTests#testDrawSeriesWithZeroItems]
+[should take at most: 165 mutants (originally 1389) * 816ms/mutant = 134.64s]
+[actually took 17.882s; 5/161/0/0 pass/fail/timeout/crash]
+[starting test 191/436: org.jfree.chart.plot.junit.XYPlotTests#testEquals]
+[should take at most: 156 mutants (originally 1166) * 976ms/mutant = 152.256s]
+[actually took 13.944s; 4/153/0/0 pass/fail/timeout/crash]
+[starting test 192/436: org.jfree.chart.plot.junit.XYPlotTests#testGetDomainAxisForDataset]
+[should take at most: 172 mutants (originally 805) * 952ms/mutant = 163.744s]
+worker exited without responding
+killing worker
+kill: sending signal to 3215 failed: No such process
+Warning: 'kill -9 3215' exited with status 1
+Created worker with pid 8081
+[actually took 20.614s; 6/166/0/1 pass/fail/timeout/crash]
+[starting test 193/436: org.jfree.chart.plot.junit.XYPlotTests#testGetLegendItems]
+[should take at most: 169 mutants (originally 776) * 780ms/mutant = 131.82s]
+worker exited without responding
+killing worker
+kill: sending signal to 8081 failed: No such process
+Warning: 'kill -9 8081' exited with status 1
+Created worker with pid 8442
+[actually took 19.55s; 1/168/0/1 pass/fail/timeout/crash]
+[starting test 194/436: org.jfree.chart.plot.junit.XYPlotTests#testGetRangeAxisForDataset]
+[should take at most: 172 mutants (originally 805) * 792ms/mutant = 136.224s]
+worker exited without responding
+killing worker
+kill: sending signal to 8442 failed: No such process
+Warning: 'kill -9 8442' exited with status 1
+Created worker with pid 8797
+[actually took 20.25s; 6/166/0/1 pass/fail/timeout/crash]
+[starting test 195/436: org.jfree.chart.plot.junit.XYPlotTests#testGetRendererForDataset]
+[should take at most: 168 mutants (originally 623) * 1064ms/mutant = 178.752s]
+worker exited without responding
+killing worker
+kill: sending signal to 8797 failed: No such process
+Warning: 'kill -9 8797' exited with status 1
+Created worker with pid 9158
+[actually took 18.323s; 3/165/0/1 pass/fail/timeout/crash]
+[starting test 196/436: org.jfree.chart.plot.junit.XYPlotTests#testRemoveAnnotation]
+[should take at most: 146 mutants (originally 474) * 944ms/mutant = 137.824s]
+[actually took 12.143s; 18/129/0/0 pass/fail/timeout/crash]
+[starting test 197/436: org.jfree.chart.plot.junit.XYPlotTests#testRemoveDomainMarker]
+[should take at most: 146 mutants (originally 471) * 824ms/mutant = 120.304s]
+[actually took 12.039s; 18/129/0/0 pass/fail/timeout/crash]
+[starting test 198/436: org.jfree.chart.plot.junit.XYPlotTests#testRemoveRangeMarker]
+[should take at most: 146 mutants (originally 471) * 728ms/mutant = 106.288s]
+[actually took 12.151s; 18/129/0/0 pass/fail/timeout/crash]
+[starting test 199/436: org.jfree.chart.plot.junit.XYPlotTests#testSerialization1]
+[should take at most: 172 mutants (originally 1522) * 758ms/mutant = 130.376s]
+worker exited without responding
+killing worker
+kill: sending signal to 9158 failed: No such process
+Warning: 'kill -9 9158' exited with status 1
+Created worker with pid 10393
+[actually took 21.344s; 23/149/0/1 pass/fail/timeout/crash]
+[starting test 200/436: org.jfree.chart.plot.junit.XYPlotTests#testSerialization2]
+[should take at most: 172 mutants (originally 1566) * 916ms/mutant = 157.552s]
+worker exited without responding
+killing worker
+kill: sending signal to 10393 failed: No such process
+Warning: 'kill -9 10393' exited with status 1
+Created worker with pid 10754
+[actually took 22.98s; 21/151/0/1 pass/fail/timeout/crash]
+[starting test 201/436: org.jfree.chart.plot.junit.XYPlotTests#testSerialization3]
+[should take at most: 173 mutants (originally 2255) * 1358ms/mutant = 234.934s]
+worker exited without responding
+killing worker
+kill: sending signal to 10754 failed: No such process
+Warning: 'kill -9 10754' exited with status 1
+Created worker with pid 11116
+[actually took 22.567s; 6/167/0/1 pass/fail/timeout/crash]
+[starting test 202/436: org.jfree.chart.plot.junit.XYPlotTests#testSerialization4]
+[should take at most: 173 mutants (originally 2255) * 990ms/mutant = 171.27s]
+worker exited without responding
+killing worker
+kill: sending signal to 11116 failed: No such process
+Warning: 'kill -9 11116' exited with status 1
+Created worker with pid 11480
+[actually took 22.088s; 6/167/0/1 pass/fail/timeout/crash]
+[starting test 203/436: org.jfree.chart.plot.junit.XYPlotTests#testSerialization5]
+[should take at most: 172 mutants (originally 1529) * 782ms/mutant = 134.504s]
+worker exited without responding
+killing worker
+kill: sending signal to 11480 failed: No such process
+Warning: 'kill -9 11480' exited with status 1
+Created worker with pid 11844
+[actually took 20.828s; 6/166/0/1 pass/fail/timeout/crash]
+[starting test 204/436: org.jfree.chart.plot.junit.XYPlotTests#testSetNullRenderer]
+[should take at most: 150 mutants (originally 651) * 992ms/mutant = 148.8s]
+[actually took 13.799s; 21/130/0/0 pass/fail/timeout/crash]
+[starting test 205/436: org.jfree.chart.plot.junit.XYPlotTests#testSetRenderer]
+[should take at most: 151 mutants (originally 637) * 864ms/mutant = 130.464s]
+[actually took 12.763s; 18/134/0/0 pass/fail/timeout/crash]
+[starting test 206/436: org.jfree.chart.renderer.category.junit.AbstractCategoryItemRendererTests#testCloning1]
+[should take at most: 25 mutants (originally 497) * 752ms/mutant = 18.8s]
+[actually took 2.155s; 18/8/0/0 pass/fail/timeout/crash]
+[starting test 207/436: org.jfree.chart.renderer.category.junit.AbstractCategoryItemRendererTests#testCloning2]
+[should take at most: 25 mutants (originally 497) * 752ms/mutant = 18.8s]
+[actually took 2.211s; 18/8/0/0 pass/fail/timeout/crash]
+[starting test 208/436: org.jfree.chart.renderer.category.junit.AbstractCategoryItemRendererTests#testCloning_LegendItemLabelGenerator]
+[should take at most: 7 mutants (originally 453) * 736ms/mutant = 5.152s]
+[actually took 0.647s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 209/436: org.jfree.chart.renderer.category.junit.AbstractCategoryItemRendererTests#testCloning_LegendItemToolTipGenerator]
+[should take at most: 7 mutants (originally 453) * 728ms/mutant = 5.096s]
+[actually took 0.595s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 210/436: org.jfree.chart.renderer.category.junit.AbstractCategoryItemRendererTests#testCloning_LegendItemURLGenerator]
+[should take at most: 7 mutants (originally 453) * 728ms/mutant = 5.096s]
+[actually took 0.583s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 211/436: org.jfree.chart.renderer.category.junit.AbstractCategoryItemRendererTests#testEquals]
+[should take at most: 25 mutants (originally 509) * 832ms/mutant = 20.8s]
+[actually took 2.275s; 5/21/0/0 pass/fail/timeout/crash]
+[starting test 212/436: org.jfree.chart.renderer.category.junit.AbstractCategoryItemRendererTests#testFindRangeBounds]
+[should take at most: 35 mutants (originally 303) * 720ms/mutant = 25.2s]
+[actually took 3.12s; 8/28/0/0 pass/fail/timeout/crash]
+[starting test 213/436: org.jfree.chart.renderer.category.junit.AbstractCategoryItemRendererTests#testGetSeriesItemLabelGenerator]
+[should take at most: 24 mutants (originally 243) * 1080ms/mutant = 25.92s]
+[actually took 2.108s; 5/20/0/0 pass/fail/timeout/crash]
+[starting test 214/436: org.jfree.chart.renderer.category.junit.AbstractCategoryItemRendererTests#testGetSeriesURLGenerator]
+[should take at most: 24 mutants (originally 243) * 712ms/mutant = 17.088s]
+[actually took 2.124s; 5/20/0/0 pass/fail/timeout/crash]
+[starting test 215/436: org.jfree.chart.renderer.category.junit.AreaRendererTests#testCloning]
+[should take at most: 7 mutants (originally 368) * 1080ms/mutant = 7.56s]
+[actually took 0.648s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 216/436: org.jfree.chart.renderer.category.junit.AreaRendererTests#testEquals]
+[should take at most: 7 mutants (originally 321) * 1080ms/mutant = 7.56s]
+[actually took 0.644s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 217/436: org.jfree.chart.renderer.category.junit.AreaRendererTests#testGetLegendItemSeriesIndex]
+[should take at most: 234 mutants (originally 1371) * 872ms/mutant = 204.048s]
+[actually took 28.938s; 13/222/0/0 pass/fail/timeout/crash]
+[starting test 218/436: org.jfree.chart.renderer.category.junit.AreaRendererTests#testHashcode]
+[should take at most: 7 mutants (originally 364) * 736ms/mutant = 5.152s]
+[actually took 0.608s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 219/436: org.jfree.chart.renderer.category.junit.AreaRendererTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 154) * 1096ms/mutant = 6.576s]
+[actually took 0.516s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 220/436: org.jfree.chart.renderer.category.junit.AreaRendererTests#testSerialization]
+[should take at most: 7 mutants (originally 493) * 904ms/mutant = 6.328s]
+[actually took 0.639s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 221/436: org.jfree.chart.renderer.category.junit.BarRenderer3DTests#testCloning]
+[should take at most: 7 mutants (originally 463) * 744ms/mutant = 5.208s]
+[actually took 0.619s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 222/436: org.jfree.chart.renderer.category.junit.BarRenderer3DTests#testEquals]
+[should take at most: 7 mutants (originally 420) * 744ms/mutant = 5.208s]
+[actually took 0.607s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 223/436: org.jfree.chart.renderer.category.junit.BarRenderer3DTests#testHashcode]
+[should take at most: 7 mutants (originally 463) * 968ms/mutant = 6.776s]
+[actually took 0.611s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 224/436: org.jfree.chart.renderer.category.junit.BarRenderer3DTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 212) * 728ms/mutant = 4.368s]
+[actually took 0.524s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 225/436: org.jfree.chart.renderer.category.junit.BarRenderer3DTests#testSerialization]
+[should take at most: 7 mutants (originally 582) * 960ms/mutant = 6.72s]
+[actually took 0.667s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 226/436: org.jfree.chart.renderer.category.junit.BarRendererTests#testCloning]
+[should take at most: 7 mutants (originally 460) * 1000ms/mutant = 7.0s]
+[actually took 0.647s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 227/436: org.jfree.chart.renderer.category.junit.BarRendererTests#testEquals]
+[should take at most: 7 mutants (originally 455) * 808ms/mutant = 5.656s]
+[actually took 0.655s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 228/436: org.jfree.chart.renderer.category.junit.BarRendererTests#testEventNotification]
+[should take at most: 6 mutants (originally 216) * 744ms/mutant = 4.464s]
+[actually took 0.544s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 229/436: org.jfree.chart.renderer.category.junit.BarRendererTests#testFindRangeBounds]
+[should take at most: 35 mutants (originally 357) * 832ms/mutant = 29.12s]
+[actually took 3.6s; 7/29/0/0 pass/fail/timeout/crash]
+[starting test 230/436: org.jfree.chart.renderer.category.junit.BarRendererTests#testGetLegendItem]
+[should take at most: 232 mutants (originally 1469) * 816ms/mutant = 189.312s]
+worker exited without responding
+killing worker
+kill: sending signal to 11844 failed: No such process
+Warning: 'kill -9 11844' exited with status 1
+Created worker with pid 13961
+[actually took 31.033s; 11/221/0/1 pass/fail/timeout/crash]
+[starting test 231/436: org.jfree.chart.renderer.category.junit.BarRendererTests#testGetLegendItemSeriesIndex]
+[should take at most: 234 mutants (originally 1448) * 1040ms/mutant = 243.36s]
+[actually took 27.805s; 13/222/0/0 pass/fail/timeout/crash]
+[starting test 232/436: org.jfree.chart.renderer.category.junit.BarRendererTests#testHashcode]
+[should take at most: 7 mutants (originally 449) * 888ms/mutant = 6.216s]
+[actually took 0.603s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 233/436: org.jfree.chart.renderer.category.junit.BarRendererTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 198) * 1064ms/mutant = 6.384s]
+[actually took 0.496s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 234/436: org.jfree.chart.renderer.category.junit.BarRendererTests#testSerialization]
+[should take at most: 7 mutants (originally 594) * 812ms/mutant = 5.684s]
+[actually took 0.655s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 235/436: org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests#testBug1572478Horizontal]
+[should take at most: 236 mutants (originally 3033) * 1132ms/mutant = 267.152s]
+[actually took 30.409s; 12/225/0/0 pass/fail/timeout/crash]
+[starting test 236/436: org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests#testBug1572478Vertical]
+[should take at most: 236 mutants (originally 3023) * 862ms/mutant = 203.432s]
+worker timed out without responding
+killing worker
+kill: sending signal to 13961 failed: No such process
+Warning: 'kill -9 13961' exited with status 1
+Created worker with pid 15598
+[actually took 31.93s; 12/224/0/1 pass/fail/timeout/crash]
+[starting test 237/436: org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests#testCloning]
+[should take at most: 7 mutants (originally 368) * 808ms/mutant = 5.656s]
+[actually took 0.628s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 238/436: org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests#testDrawWithNullInfo]
+[should take at most: 236 mutants (originally 3012) * 1560ms/mutant = 368.16s]
+[actually took 29.697s; 12/225/0/0 pass/fail/timeout/crash]
+[starting test 239/436: org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests#testDrawWithNullMaxOutlier]
+[should take at most: 236 mutants (originally 3082) * 1154ms/mutant = 272.344s]
+[actually took 29.692s; 12/225/0/0 pass/fail/timeout/crash]
+[starting test 240/436: org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests#testDrawWithNullMaxRegular]
+[should take at most: 236 mutants (originally 3023) * 1008ms/mutant = 237.888s]
+[actually took 30.778s; 12/225/0/0 pass/fail/timeout/crash]
+[starting test 241/436: org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests#testDrawWithNullMean]
+[should take at most: 236 mutants (originally 3082) * 1124ms/mutant = 265.264s]
+worker exited without responding
+killing worker
+kill: sending signal to 15598 failed: No such process
+Warning: 'kill -9 15598' exited with status 1
+Created worker with pid 17270
+[actually took 32.464s; 12/224/0/1 pass/fail/timeout/crash]
+[starting test 242/436: org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests#testDrawWithNullMedian]
+[should take at most: 236 mutants (originally 2876) * 1228ms/mutant = 289.808s]
+[actually took 29.241s; 12/225/0/0 pass/fail/timeout/crash]
+[starting test 243/436: org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests#testDrawWithNullMinOutlier]
+[should take at most: 236 mutants (originally 3082) * 1136ms/mutant = 268.096s]
+[actually took 30.308s; 12/225/0/0 pass/fail/timeout/crash]
+[starting test 244/436: org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests#testDrawWithNullMinRegular]
+[should take at most: 236 mutants (originally 3023) * 1050ms/mutant = 247.8s]
+worker exited without responding
+killing worker
+kill: sending signal to 17270 failed: No such process
+Warning: 'kill -9 17270' exited with status 1
+Created worker with pid 18956
+worker exited without responding
+killing worker
+kill: sending signal to 18956 failed: No such process
+Warning: 'kill -9 18956' exited with status 1
+Created worker with pid 18974
+worker exited without responding
+killing worker
+kill: sending signal to 18974 failed: No such process
+Warning: 'kill -9 18974' exited with status 1
+Created worker with pid 18992
+[actually took 35.118s; 12/222/0/3 pass/fail/timeout/crash]
+[starting test 245/436: org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests#testDrawWithNullQ1]
+[should take at most: 236 mutants (originally 3023) * 1264ms/mutant = 298.304s]
+[actually took 29.705s; 12/225/0/0 pass/fail/timeout/crash]
+[starting test 246/436: org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests#testDrawWithNullQ3]
+[should take at most: 236 mutants (originally 3023) * 1102ms/mutant = 260.072s]
+[actually took 29.758s; 12/225/0/0 pass/fail/timeout/crash]
+[starting test 247/436: org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests#testEquals]
+[should take at most: 7 mutants (originally 321) * 712ms/mutant = 4.984s]
+[actually took 0.628s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 248/436: org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests#testGetLegendItem]
+[should take at most: 231 mutants (originally 1376) * 756ms/mutant = 174.636s]
+[actually took 28.47s; 11/221/0/0 pass/fail/timeout/crash]
+[starting test 249/436: org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests#testGetLegendItemSeriesIndex]
+[should take at most: 234 mutants (originally 1371) * 788ms/mutant = 184.392s]
+worker timed out without responding
+killing worker
+kill: sending signal to 18992 failed: No such process
+Warning: 'kill -9 18992' exited with status 1
+Created worker with pid 20661
+[actually took 30.226s; 13/221/0/1 pass/fail/timeout/crash]
+[starting test 250/436: org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests#testHashcode]
+[should take at most: 7 mutants (originally 364) * 784ms/mutant = 5.488s]
+[actually took 0.608s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 251/436: org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 154) * 992ms/mutant = 5.952s]
+[actually took 0.564s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 252/436: org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests#testSerialization]
+[should take at most: 7 mutants (originally 493) * 764ms/mutant = 5.348s]
+[actually took 0.691s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 253/436: org.jfree.chart.renderer.category.junit.CategoryStepRendererTests#testCloning]
+[should take at most: 7 mutants (originally 368) * 1024ms/mutant = 7.168s]
+[actually took 0.648s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 254/436: org.jfree.chart.renderer.category.junit.CategoryStepRendererTests#testEquals]
+[should take at most: 7 mutants (originally 321) * 1024ms/mutant = 7.168s]
+[actually took 0.628s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 255/436: org.jfree.chart.renderer.category.junit.CategoryStepRendererTests#testGetLegendItemSeriesIndex]
+[should take at most: 234 mutants (originally 1350) * 784ms/mutant = 183.456s]
+[actually took 27.306s; 13/222/0/0 pass/fail/timeout/crash]
+[starting test 256/436: org.jfree.chart.renderer.category.junit.CategoryStepRendererTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 154) * 992ms/mutant = 5.952s]
+[actually took 0.552s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 257/436: org.jfree.chart.renderer.category.junit.CategoryStepRendererTests#testSerialization]
+[should take at most: 7 mutants (originally 493) * 872ms/mutant = 6.104s]
+[actually took 0.691s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 258/436: org.jfree.chart.renderer.category.junit.DefaultCategoryItemRendererTests#testCloning]
+[should take at most: 7 mutants (originally 402) * 1008ms/mutant = 7.056s]
+[actually took 0.664s; 4/4/0/0 pass/fail/timeout/crash]
+[starting test 259/436: org.jfree.chart.renderer.category.junit.DefaultCategoryItemRendererTests#testEquals]
+[should take at most: 7 mutants (originally 350) * 976ms/mutant = 6.832s]
+[actually took 0.688s; 4/4/0/0 pass/fail/timeout/crash]
+[starting test 260/436: org.jfree.chart.renderer.category.junit.DefaultCategoryItemRendererTests#testHashcode]
+[should take at most: 7 mutants (originally 393) * 1072ms/mutant = 7.504s]
+[actually took 0.664s; 4/4/0/0 pass/fail/timeout/crash]
+[starting test 261/436: org.jfree.chart.renderer.category.junit.DefaultCategoryItemRendererTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 156) * 912ms/mutant = 5.472s]
+[actually took 0.636s; 3/4/0/0 pass/fail/timeout/crash]
+[starting test 262/436: org.jfree.chart.renderer.category.junit.DefaultCategoryItemRendererTests#testSerialization]
+[should take at most: 7 mutants (originally 522) * 848ms/mutant = 5.936s]
+[actually took 0.735s; 4/4/0/0 pass/fail/timeout/crash]
+[starting test 263/436: org.jfree.chart.renderer.category.junit.GanttRendererTests#testCloning]
+[should take at most: 7 mutants (originally 454) * 1072ms/mutant = 7.504s]
+[actually took 0.647s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 264/436: org.jfree.chart.renderer.category.junit.GanttRendererTests#testEquals]
+[should take at most: 7 mutants (originally 411) * 696ms/mutant = 4.872s]
+[actually took 0.671s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 265/436: org.jfree.chart.renderer.category.junit.GanttRendererTests#testHashcode]
+[should take at most: 7 mutants (originally 454) * 688ms/mutant = 4.816s]
+[actually took 0.647s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 266/436: org.jfree.chart.renderer.category.junit.GanttRendererTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 203) * 1008ms/mutant = 6.048s]
+[actually took 0.528s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 267/436: org.jfree.chart.renderer.category.junit.GanttRendererTests#testSerialization]
+[should take at most: 7 mutants (originally 599) * 976ms/mutant = 6.832s]
+[actually took 0.715s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 268/436: org.jfree.chart.renderer.category.junit.GradientBarPainterTests#testCloning]
+[should take at most: 0 mutants (originally 0) * 488ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 269/436: org.jfree.chart.renderer.category.junit.GradientBarPainterTests#testEquals]
+[should take at most: 0 mutants (originally 0) * 488ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 270/436: org.jfree.chart.renderer.category.junit.GradientBarPainterTests#testHashcode]
+[should take at most: 0 mutants (originally 0) * 488ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 271/436: org.jfree.chart.renderer.category.junit.GradientBarPainterTests#testSerialization]
+[should take at most: 0 mutants (originally 0) * 736ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 272/436: org.jfree.chart.renderer.category.junit.GroupedStackedBarRendererTests#testCloning]
+[should take at most: 7 mutants (originally 467) * 744ms/mutant = 5.208s]
+[actually took 0.619s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 273/436: org.jfree.chart.renderer.category.junit.GroupedStackedBarRendererTests#testDrawWithNullInfo]
+[should take at most: 237 mutants (originally 3131) * 1582ms/mutant = 374.934s]
+[actually took 32.707s; 12/226/0/0 pass/fail/timeout/crash]
+[starting test 274/436: org.jfree.chart.renderer.category.junit.GroupedStackedBarRendererTests#testEquals]
+[should take at most: 7 mutants (originally 424) * 784ms/mutant = 5.488s]
+[actually took 0.647s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 275/436: org.jfree.chart.renderer.category.junit.GroupedStackedBarRendererTests#testFindRangeBounds]
+[should take at most: 30 mutants (originally 326) * 816ms/mutant = 24.48s]
+[actually took 2.996s; 2/29/0/0 pass/fail/timeout/crash]
+[starting test 276/436: org.jfree.chart.renderer.category.junit.GroupedStackedBarRendererTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 216) * 744ms/mutant = 4.464s]
+[actually took 0.576s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 277/436: org.jfree.chart.renderer.category.junit.GroupedStackedBarRendererTests#testSerialization]
+[should take at most: 7 mutants (originally 560) * 1016ms/mutant = 7.112s]
+[actually took 0.767s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 278/436: org.jfree.chart.renderer.category.junit.IntervalBarRendererTests#testCloning]
+[should take at most: 7 mutants (originally 449) * 760ms/mutant = 5.32s]
+[actually took 0.647s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 279/436: org.jfree.chart.renderer.category.junit.IntervalBarRendererTests#testDrawWithNullInfo]
+[should take at most: 214 mutants (originally 3030) * 1038ms/mutant = 222.132s]
+worker exited without responding
+killing worker
+kill: sending signal to 20661 failed: No such process
+Warning: 'kill -9 20661' exited with status 1
+Created worker with pid 22441
+[actually took 30.001s; 12/202/0/1 pass/fail/timeout/crash]
+[starting test 280/436: org.jfree.chart.renderer.category.junit.IntervalBarRendererTests#testEquals]
+[should take at most: 7 mutants (originally 406) * 832ms/mutant = 5.824s]
+[actually took 0.616s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 281/436: org.jfree.chart.renderer.category.junit.IntervalBarRendererTests#testHashcode]
+[should take at most: 7 mutants (originally 449) * 808ms/mutant = 5.656s]
+[actually took 0.675s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 282/436: org.jfree.chart.renderer.category.junit.IntervalBarRendererTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 198) * 752ms/mutant = 4.512s]
+[actually took 0.572s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 283/436: org.jfree.chart.renderer.category.junit.IntervalBarRendererTests#testSerialization]
+[should take at most: 7 mutants (originally 594) * 752ms/mutant = 5.264s]
+[actually took 0.679s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 284/436: org.jfree.chart.renderer.category.junit.LayeredBarRendererTests#testCloning]
+[should take at most: 7 mutants (originally 449) * 768ms/mutant = 5.376s]
+[actually took 0.587s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 285/436: org.jfree.chart.renderer.category.junit.LayeredBarRendererTests#testDrawWithNullInfo]
+[should take at most: 237 mutants (originally 3041) * 1110ms/mutant = 263.07s]
+[actually took 30.601s; 12/226/0/0 pass/fail/timeout/crash]
+[starting test 286/436: org.jfree.chart.renderer.category.junit.LayeredBarRendererTests#testEquals]
+[should take at most: 7 mutants (originally 406) * 720ms/mutant = 5.04s]
+[actually took 0.635s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 287/436: org.jfree.chart.renderer.category.junit.LayeredBarRendererTests#testHashcode]
+[should take at most: 7 mutants (originally 449) * 728ms/mutant = 5.096s]
+[actually took 0.611s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 288/436: org.jfree.chart.renderer.category.junit.LayeredBarRendererTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 198) * 696ms/mutant = 4.176s]
+[actually took 0.512s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 289/436: org.jfree.chart.renderer.category.junit.LayeredBarRendererTests#testSerialization]
+[should take at most: 7 mutants (originally 594) * 984ms/mutant = 6.888s]
+[actually took 0.663s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 290/436: org.jfree.chart.renderer.category.junit.LevelRendererTests#testCloning]
+[should take at most: 7 mutants (originally 375) * 1080ms/mutant = 7.56s]
+[actually took 0.596s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 291/436: org.jfree.chart.renderer.category.junit.LevelRendererTests#testDrawWithNullInfo]
+[should take at most: 237 mutants (originally 3020) * 1136ms/mutant = 269.232s]
+[actually took 30.598s; 12/226/0/0 pass/fail/timeout/crash]
+[starting test 292/436: org.jfree.chart.renderer.category.junit.LevelRendererTests#testEquals]
+[should take at most: 7 mutants (originally 328) * 704ms/mutant = 4.928s]
+[actually took 0.604s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 293/436: org.jfree.chart.renderer.category.junit.LevelRendererTests#testGetLegendItemSeriesIndex]
+[should take at most: 234 mutants (originally 1399) * 752ms/mutant = 175.968s]
+worker timed out without responding
+killing worker
+Created worker with pid 24110
+[actually took 29.81s; 13/221/0/1 pass/fail/timeout/crash]
+[starting test 294/436: org.jfree.chart.renderer.category.junit.LevelRendererTests#testHashcode]
+[should take at most: 7 mutants (originally 371) * 808ms/mutant = 5.656s]
+[actually took 0.592s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 295/436: org.jfree.chart.renderer.category.junit.LevelRendererTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 161) * 1048ms/mutant = 6.288s]
+[actually took 0.524s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 296/436: org.jfree.chart.renderer.category.junit.LevelRendererTests#testSerialization]
+[should take at most: 7 mutants (originally 500) * 792ms/mutant = 5.544s]
+[actually took 0.659s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 297/436: org.jfree.chart.renderer.category.junit.LineAndShapeRendererTests#testCloning]
+[should take at most: 23 mutants (originally 475) * 728ms/mutant = 16.744s]
+[actually took 1.947s; 1/23/0/0 pass/fail/timeout/crash]
+[starting test 298/436: org.jfree.chart.renderer.category.junit.LineAndShapeRendererTests#testEquals]
+[should take at most: 23 mutants (originally 446) * 856ms/mutant = 19.688s]
+[actually took 1.967s; 5/19/0/0 pass/fail/timeout/crash]
+[starting test 299/436: org.jfree.chart.renderer.category.junit.LineAndShapeRendererTests#testGetLegendItemSeriesIndex]
+[should take at most: 234 mutants (originally 1473) * 844ms/mutant = 197.496s]
+[actually took 27.501s; 13/222/0/0 pass/fail/timeout/crash]
+[starting test 300/436: org.jfree.chart.renderer.category.junit.LineAndShapeRendererTests#testHashcode]
+[should take at most: 7 mutants (originally 393) * 1096ms/mutant = 7.672s]
+[actually took 0.636s; 4/4/0/0 pass/fail/timeout/crash]
+[starting test 301/436: org.jfree.chart.renderer.category.junit.LineAndShapeRendererTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 156) * 1096ms/mutant = 6.576s]
+[actually took 0.568s; 3/4/0/0 pass/fail/timeout/crash]
+[starting test 302/436: org.jfree.chart.renderer.category.junit.LineAndShapeRendererTests#testSerialization]
+[should take at most: 7 mutants (originally 522) * 936ms/mutant = 6.552s]
+[actually took 0.707s; 4/4/0/0 pass/fail/timeout/crash]
+[starting test 303/436: org.jfree.chart.renderer.category.junit.LineRenderer3DTests#testCloning]
+[should take at most: 23 mutants (originally 473) * 712ms/mutant = 16.376s]
+[actually took 1.983s; 1/23/0/0 pass/fail/timeout/crash]
+[starting test 304/436: org.jfree.chart.renderer.category.junit.LineRenderer3DTests#testEquals]
+[should take at most: 7 mutants (originally 364) * 1080ms/mutant = 7.56s]
+[actually took 0.64s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 305/436: org.jfree.chart.renderer.category.junit.LineRenderer3DTests#testHashcode]
+[should take at most: 7 mutants (originally 391) * 1064ms/mutant = 7.448s]
+[actually took 0.608s; 4/4/0/0 pass/fail/timeout/crash]
+[starting test 306/436: org.jfree.chart.renderer.category.junit.LineRenderer3DTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 154) * 1048ms/mutant = 6.288s]
+[actually took 0.552s; 3/4/0/0 pass/fail/timeout/crash]
+[starting test 307/436: org.jfree.chart.renderer.category.junit.LineRenderer3DTests#testSerialization]
+[should take at most: 7 mutants (originally 520) * 920ms/mutant = 6.44s]
+[actually took 0.747s; 4/4/0/0 pass/fail/timeout/crash]
+[starting test 308/436: org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests#testCloning]
+[should take at most: 7 mutants (originally 350) * 728ms/mutant = 5.096s]
+[actually took 0.584s; 4/4/0/0 pass/fail/timeout/crash]
+[starting test 309/436: org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests#testDrawWithNullInfo]
+[should take at most: 237 mutants (originally 2975) * 1368ms/mutant = 324.216s]
+[actually took 31.226s; 12/226/0/0 pass/fail/timeout/crash]
+[starting test 310/436: org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests#testEquals]
+[should take at most: 7 mutants (originally 319) * 744ms/mutant = 5.208s]
+[actually took 0.62s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 311/436: org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests#testHashcode]
+[should take at most: 7 mutants (originally 346) * 752ms/mutant = 5.264s]
+[actually took 0.612s; 4/4/0/0 pass/fail/timeout/crash]
+[starting test 312/436: org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 136) * 1096ms/mutant = 6.576s]
+[actually took 0.516s; 3/4/0/0 pass/fail/timeout/crash]
+[starting test 313/436: org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests#testSerialization]
+[should take at most: 7 mutants (originally 475) * 912ms/mutant = 6.384s]
+[actually took 0.679s; 4/4/0/0 pass/fail/timeout/crash]
+[starting test 314/436: org.jfree.chart.renderer.category.junit.ScatterRendererTests#testCloning]
+[should take at most: 23 mutants (originally 400) * 1064ms/mutant = 24.472s]
+[actually took 2.008s; 5/19/0/0 pass/fail/timeout/crash]
+[starting test 315/436: org.jfree.chart.renderer.category.junit.ScatterRendererTests#testEquals]
+[should take at most: 23 mutants (originally 353) * 1064ms/mutant = 24.472s]
+[actually took 1.992s; 5/19/0/0 pass/fail/timeout/crash]
+[starting test 316/436: org.jfree.chart.renderer.category.junit.ScatterRendererTests#testHashcode]
+[should take at most: 7 mutants (originally 346) * 1064ms/mutant = 7.448s]
+[actually took 0.656s; 4/4/0/0 pass/fail/timeout/crash]
+[starting test 317/436: org.jfree.chart.renderer.category.junit.ScatterRendererTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 136) * 1000ms/mutant = 6.0s]
+[actually took 0.608s; 3/4/0/0 pass/fail/timeout/crash]
+[starting test 318/436: org.jfree.chart.renderer.category.junit.ScatterRendererTests#testSerialization]
+[should take at most: 7 mutants (originally 475) * 912ms/mutant = 6.384s]
+[actually took 0.739s; 4/4/0/0 pass/fail/timeout/crash]
+[starting test 319/436: org.jfree.chart.renderer.category.junit.StackedAreaRendererTests#testCloning]
+[should take at most: 7 mutants (originally 368) * 1064ms/mutant = 7.448s]
+[actually took 0.624s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 320/436: org.jfree.chart.renderer.category.junit.StackedAreaRendererTests#testEquals]
+[should take at most: 7 mutants (originally 321) * 1080ms/mutant = 7.56s]
+[actually took 0.616s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 321/436: org.jfree.chart.renderer.category.junit.StackedAreaRendererTests#testHashcode]
+[should take at most: 7 mutants (originally 364) * 1096ms/mutant = 7.672s]
+[actually took 0.62s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 322/436: org.jfree.chart.renderer.category.junit.StackedAreaRendererTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 154) * 1016ms/mutant = 6.096s]
+[actually took 0.496s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 323/436: org.jfree.chart.renderer.category.junit.StackedAreaRendererTests#testSerialization]
+[should take at most: 7 mutants (originally 493) * 944ms/mutant = 6.608s]
+[actually took 0.703s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 324/436: org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests#testCloning]
+[should take at most: 7 mutants (originally 463) * 768ms/mutant = 5.376s]
+[actually took 0.623s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 325/436: org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests#testCreateStackedValueList1]
+[should take at most: 30 mutants (originally 319) * 792ms/mutant = 23.76s]
+worker timed out without responding
+killing worker
+Created worker with pid 26058
+[actually took 4.072s; 2/28/0/1 pass/fail/timeout/crash]
+[starting test 326/436: org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests#testCreateStackedValueList1a]
+[should take at most: 30 mutants (originally 319) * 1000ms/mutant = 30.0s]
+[actually took 3.092s; 2/29/0/0 pass/fail/timeout/crash]
+[starting test 327/436: org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests#testCreateStackedValueList1b]
+[should take at most: 30 mutants (originally 319) * 872ms/mutant = 26.16s]
+[actually took 3.08s; 2/29/0/0 pass/fail/timeout/crash]
+[starting test 328/436: org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests#testCreateStackedValueList1c]
+[should take at most: 30 mutants (originally 319) * 792ms/mutant = 23.76s]
+[actually took 3.084s; 2/29/0/0 pass/fail/timeout/crash]
+[starting test 329/436: org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests#testCreateStackedValueList1d]
+[should take at most: 30 mutants (originally 319) * 808ms/mutant = 24.24s]
+[actually took 3.076s; 2/29/0/0 pass/fail/timeout/crash]
+[starting test 330/436: org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests#testCreateStackedValueList2]
+[should take at most: 30 mutants (originally 319) * 760ms/mutant = 22.8s]
+[actually took 3.004s; 2/29/0/0 pass/fail/timeout/crash]
+[starting test 331/436: org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests#testCreateStackedValueList2a]
+[should take at most: 30 mutants (originally 319) * 712ms/mutant = 21.36s]
+[actually took 2.988s; 2/29/0/0 pass/fail/timeout/crash]
+[starting test 332/436: org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests#testCreateStackedValueList2b]
+[should take at most: 30 mutants (originally 319) * 712ms/mutant = 21.36s]
+[actually took 3.004s; 2/29/0/0 pass/fail/timeout/crash]
+[starting test 333/436: org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests#testCreateStackedValueList2c]
+[should take at most: 30 mutants (originally 319) * 720ms/mutant = 21.6s]
+[actually took 2.972s; 2/29/0/0 pass/fail/timeout/crash]
+[starting test 334/436: org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests#testCreateStackedValueList2d]
+[should take at most: 30 mutants (originally 319) * 776ms/mutant = 23.28s]
+[actually took 2.992s; 2/29/0/0 pass/fail/timeout/crash]
+[starting test 335/436: org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests#testCreateStackedValueList3]
+[should take at most: 30 mutants (originally 319) * 720ms/mutant = 21.6s]
+[actually took 3.024s; 2/29/0/0 pass/fail/timeout/crash]
+[starting test 336/436: org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests#testCreateStackedValueList3a]
+[should take at most: 30 mutants (originally 319) * 720ms/mutant = 21.6s]
+[actually took 3.028s; 2/29/0/0 pass/fail/timeout/crash]
+[starting test 337/436: org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests#testCreateStackedValueList3b]
+[should take at most: 30 mutants (originally 319) * 728ms/mutant = 21.84s]
+[actually took 3.044s; 2/29/0/0 pass/fail/timeout/crash]
+[starting test 338/436: org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests#testCreateStackedValueList3c]
+[should take at most: 30 mutants (originally 319) * 736ms/mutant = 22.08s]
+[actually took 3.028s; 2/29/0/0 pass/fail/timeout/crash]
+[starting test 339/436: org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests#testCreateStackedValueList3d]
+[should take at most: 30 mutants (originally 319) * 728ms/mutant = 21.84s]
+[actually took 3.028s; 2/29/0/0 pass/fail/timeout/crash]
+[starting test 340/436: org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests#testCreateStackedValueList4]
+[should take at most: 30 mutants (originally 318) * 728ms/mutant = 21.84s]
+[actually took 3.08s; 2/29/0/0 pass/fail/timeout/crash]
+[starting test 341/436: org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests#testCreateStackedValueList5]
+[should take at most: 30 mutants (originally 319) * 736ms/mutant = 22.08s]
+[actually took 3.064s; 2/29/0/0 pass/fail/timeout/crash]
+[starting test 342/436: org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests#testEquals]
+[should take at most: 7 mutants (originally 420) * 808ms/mutant = 5.656s]
+[actually took 0.615s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 343/436: org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests#testFindRangeBounds]
+[should take at most: 30 mutants (originally 320) * 832ms/mutant = 24.96s]
+[actually took 2.744s; 2/29/0/0 pass/fail/timeout/crash]
+[starting test 344/436: org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests#testHashcode]
+[should take at most: 7 mutants (originally 463) * 720ms/mutant = 5.04s]
+[actually took 0.595s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 345/436: org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 212) * 1056ms/mutant = 6.336s]
+[actually took 0.495s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 346/436: org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests#testSerialization]
+[should take at most: 7 mutants (originally 582) * 764ms/mutant = 5.348s]
+[actually took 0.675s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 347/436: org.jfree.chart.renderer.category.junit.StackedBarRendererTests#testCloning]
+[should take at most: 7 mutants (originally 467) * 712ms/mutant = 4.984s]
+[actually took 0.651s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 348/436: org.jfree.chart.renderer.category.junit.StackedBarRendererTests#testEquals]
+[should take at most: 7 mutants (originally 424) * 808ms/mutant = 5.656s]
+[actually took 0.651s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 349/436: org.jfree.chart.renderer.category.junit.StackedBarRendererTests#testFindRangeBounds]
+[should take at most: 30 mutants (originally 325) * 752ms/mutant = 22.56s]
+[actually took 2.848s; 2/29/0/0 pass/fail/timeout/crash]
+[starting test 350/436: org.jfree.chart.renderer.category.junit.StackedBarRendererTests#testHashCode]
+[should take at most: 7 mutants (originally 467) * 704ms/mutant = 4.928s]
+[actually took 0.663s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 351/436: org.jfree.chart.renderer.category.junit.StackedBarRendererTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 216) * 1024ms/mutant = 6.144s]
+[actually took 0.564s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 352/436: org.jfree.chart.renderer.category.junit.StackedBarRendererTests#testSerialization]
+[should take at most: 7 mutants (originally 560) * 976ms/mutant = 6.832s]
+[actually took 0.739s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 353/436: org.jfree.chart.renderer.category.junit.StandardBarPainterTests#testCloning]
+[should take at most: 0 mutants (originally 0) * 504ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 354/436: org.jfree.chart.renderer.category.junit.StandardBarPainterTests#testEquals]
+[should take at most: 0 mutants (originally 0) * 504ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 355/436: org.jfree.chart.renderer.category.junit.StandardBarPainterTests#testHashcode]
+[should take at most: 0 mutants (originally 0) * 504ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 356/436: org.jfree.chart.renderer.category.junit.StandardBarPainterTests#testSerialization]
+[should take at most: 0 mutants (originally 0) * 736ms/mutant = 0.0s]
+[actually took 0.0s; 1/0/0/0 pass/fail/timeout/crash]
+[starting test 357/436: org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests#testCloning]
+[should take at most: 7 mutants (originally 449) * 760ms/mutant = 5.32s]
+[actually took 0.651s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 358/436: org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests#testDrawWithNullDeviationHorizontal]
+[should take at most: 236 mutants (originally 3129) * 1700ms/mutant = 401.2s]
+[actually took 32.239s; 12/225/0/0 pass/fail/timeout/crash]
+[starting test 359/436: org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests#testDrawWithNullDeviationVertical]
+[should take at most: 236 mutants (originally 3118) * 1178ms/mutant = 278.008s]
+[actually took 32.284s; 12/225/0/0 pass/fail/timeout/crash]
+[starting test 360/436: org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests#testDrawWithNullInfo]
+[should take at most: 236 mutants (originally 3118) * 1190ms/mutant = 280.84s]
+[actually took 31.139s; 12/225/0/0 pass/fail/timeout/crash]
+[starting test 361/436: org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests#testDrawWithNullMeanHorizontal]
+[should take at most: 236 mutants (originally 3129) * 1020ms/mutant = 240.72s]
+[actually took 30.331s; 12/225/0/0 pass/fail/timeout/crash]
+[starting test 362/436: org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests#testDrawWithNullMeanVertical]
+[should take at most: 236 mutants (originally 3118) * 1028ms/mutant = 242.608s]
+[actually took 31.919s; 12/225/0/0 pass/fail/timeout/crash]
+[starting test 363/436: org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests#testEquals]
+[should take at most: 7 mutants (originally 406) * 1088ms/mutant = 7.616s]
+[actually took 0.616s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 364/436: org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests#testHashcode]
+[should take at most: 7 mutants (originally 449) * 1088ms/mutant = 7.616s]
+[actually took 0.583s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 365/436: org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 198) * 1024ms/mutant = 6.144s]
+[actually took 0.532s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 366/436: org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests#testSerialization]
+[should take at most: 7 mutants (originally 594) * 872ms/mutant = 6.104s]
+[actually took 0.667s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 367/436: org.jfree.chart.renderer.category.junit.StatisticalLineAndShapeRendererTests#test1562759]
+[should take at most: 6 mutants (originally 156) * 960ms/mutant = 5.76s]
+[actually took 0.552s; 3/4/0/0 pass/fail/timeout/crash]
+[starting test 368/436: org.jfree.chart.renderer.category.junit.StatisticalLineAndShapeRendererTests#testCloning]
+[should take at most: 7 mutants (originally 400) * 1008ms/mutant = 7.056s]
+[actually took 0.636s; 4/4/0/0 pass/fail/timeout/crash]
+[starting test 369/436: org.jfree.chart.renderer.category.junit.StatisticalLineAndShapeRendererTests#testDrawWithNullInfo]
+[should take at most: 236 mutants (originally 3060) * 1090ms/mutant = 257.24s]
+[actually took 29.417s; 12/225/0/0 pass/fail/timeout/crash]
+[starting test 370/436: org.jfree.chart.renderer.category.junit.StatisticalLineAndShapeRendererTests#testEquals]
+[should take at most: 7 mutants (originally 364) * 1088ms/mutant = 7.616s]
+[actually took 0.588s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 371/436: org.jfree.chart.renderer.category.junit.StatisticalLineAndShapeRendererTests#testHashcode]
+[should take at most: 7 mutants (originally 391) * 1088ms/mutant = 7.616s]
+[actually took 0.656s; 4/4/0/0 pass/fail/timeout/crash]
+[starting test 372/436: org.jfree.chart.renderer.category.junit.StatisticalLineAndShapeRendererTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 154) * 1024ms/mutant = 6.144s]
+[actually took 0.496s; 3/4/0/0 pass/fail/timeout/crash]
+[starting test 373/436: org.jfree.chart.renderer.category.junit.StatisticalLineAndShapeRendererTests#testSerialization]
+[should take at most: 7 mutants (originally 520) * 880ms/mutant = 6.16s]
+[actually took 0.643s; 4/4/0/0 pass/fail/timeout/crash]
+[starting test 374/436: org.jfree.chart.renderer.category.junit.WaterfallBarRendererTests#testCloning]
+[should take at most: 7 mutants (originally 458) * 1072ms/mutant = 7.504s]
+[actually took 0.647s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 375/436: org.jfree.chart.renderer.category.junit.WaterfallBarRendererTests#testEquals]
+[should take at most: 7 mutants (originally 415) * 704ms/mutant = 4.928s]
+[actually took 0.663s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 376/436: org.jfree.chart.renderer.category.junit.WaterfallBarRendererTests#testFindRangeBounds]
+[should take at most: 6 mutants (originally 207) * 1024ms/mutant = 6.144s]
+[actually took 0.544s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 377/436: org.jfree.chart.renderer.category.junit.WaterfallBarRendererTests#testHashcode]
+[should take at most: 7 mutants (originally 458) * 704ms/mutant = 4.928s]
+[actually took 0.651s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 378/436: org.jfree.chart.renderer.category.junit.WaterfallBarRendererTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 207) * 1008ms/mutant = 6.048s]
+[actually took 0.564s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 379/436: org.jfree.chart.renderer.category.junit.WaterfallBarRendererTests#testSerialization]
+[should take at most: 7 mutants (originally 607) * 904ms/mutant = 6.328s]
+[actually took 0.711s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 380/436: org.jfree.chart.renderer.junit.AbstractRendererTests#testAutoPopulateFlagDefaults]
+[should take at most: 6 mutants (originally 204) * 1056ms/mutant = 6.336s]
+[actually took 0.5s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 381/436: org.jfree.chart.renderer.junit.AbstractRendererTests#testCloning]
+[should take at most: 25 mutants (originally 601) * 752ms/mutant = 18.8s]
+[actually took 2.247s; 1/25/0/0 pass/fail/timeout/crash]
+[starting test 382/436: org.jfree.chart.renderer.junit.AbstractRendererTests#testCloning2]
+[should take at most: 7 mutants (originally 440) * 1072ms/mutant = 7.504s]
+[actually took 0.643s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 383/436: org.jfree.chart.renderer.junit.AbstractRendererTests#testEquals]
+[should take at most: 25 mutants (originally 687) * 832ms/mutant = 20.8s]
+[actually took 2.186s; 1/25/0/0 pass/fail/timeout/crash]
+[starting test 384/436: org.jfree.chart.renderer.junit.AbstractRendererTests#testEventNotification]
+[should take at most: 17 mutants (originally 359) * 1088ms/mutant = 18.496s]
+[actually took 1.464s; 10/8/0/0 pass/fail/timeout/crash]
+[starting test 385/436: org.jfree.chart.renderer.junit.AbstractRendererTests#testFillPaintLookup]
+[should take at most: 208 mutants (originally 1184) * 1040ms/mutant = 216.32s]
+worker exited without responding
+killing worker
+kill: sending signal to 26058 failed: No such process
+Warning: 'kill -9 26058' exited with status 1
+Created worker with pid 30997
+[actually took 26.895s; 16/192/0/1 pass/fail/timeout/crash]
+[starting test 386/436: org.jfree.chart.renderer.junit.AbstractRendererTests#testHashCode]
+[should take at most: 23 mutants (originally 407) * 720ms/mutant = 16.56s]
+[actually took 2.136s; 8/16/0/0 pass/fail/timeout/crash]
+[starting test 387/436: org.jfree.chart.renderer.junit.AbstractRendererTests#testOutlinePaintLookup]
+[should take at most: 208 mutants (originally 1184) * 868ms/mutant = 180.544s]
+[actually took 24.083s; 16/193/0/0 pass/fail/timeout/crash]
+[starting test 388/436: org.jfree.chart.renderer.junit.AbstractRendererTests#testPaintLookup]
+[should take at most: 208 mutants (originally 1184) * 872ms/mutant = 181.376s]
+[actually took 24.339s; 16/193/0/0 pass/fail/timeout/crash]
+[starting test 389/436: org.jfree.chart.renderer.junit.AbstractRendererTests#testSerialization]
+[should take at most: 7 mutants (originally 598) * 788ms/mutant = 5.516s]
+[actually took 0.659s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 390/436: org.jfree.chart.renderer.xy.junit.StackedXYAreaRenderer2Tests#testCloning]
+[should take at most: 7 mutants (originally 316) * 1040ms/mutant = 7.28s]
+[actually took 0.627s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 391/436: org.jfree.chart.renderer.xy.junit.StackedXYAreaRenderer2Tests#testDrawWithEmptyDataset]
+[should take at most: 157 mutants (originally 1544) * 990ms/mutant = 155.43s]
+[actually took 18.052s; 5/153/0/0 pass/fail/timeout/crash]
+[starting test 392/436: org.jfree.chart.renderer.xy.junit.StackedXYAreaRenderer2Tests#testEquals]
+[should take at most: 7 mutants (originally 281) * 1040ms/mutant = 7.28s]
+[actually took 0.652s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 393/436: org.jfree.chart.renderer.xy.junit.StackedXYAreaRenderer2Tests#testFindRangeBounds]
+[should take at most: 172 mutants (originally 943) * 788ms/mutant = 135.536s]
+worker exited without responding
+killing worker
+kill: sending signal to 30997 failed: No such process
+Warning: 'kill -9 30997' exited with status 1
+Created worker with pid 32511
+[actually took 20.545s; 3/169/0/1 pass/fail/timeout/crash]
+[starting test 394/436: org.jfree.chart.renderer.xy.junit.StackedXYAreaRenderer2Tests#testHashcode]
+[should take at most: 7 mutants (originally 322) * 920ms/mutant = 6.44s]
+[actually took 0.632s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 395/436: org.jfree.chart.renderer.xy.junit.StackedXYAreaRenderer2Tests#testPublicCloneable]
+[should take at most: 6 mutants (originally 144) * 1008ms/mutant = 6.048s]
+[actually took 0.66s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 396/436: org.jfree.chart.renderer.xy.junit.StackedXYAreaRenderer2Tests#testSerialization]
+[should take at most: 7 mutants (originally 453) * 760ms/mutant = 5.32s]
+[actually took 0.707s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 397/436: org.jfree.chart.renderer.xy.junit.StackedXYAreaRendererTests#testBug1593156]
+[should take at most: 173 mutants (originally 1578) * 986ms/mutant = 170.578s]
+worker exited without responding
+killing worker
+kill: sending signal to 32511 failed: No such process
+Warning: 'kill -9 32511' exited with status 1
+Created worker with pid 451
+[actually took 21.548s; 7/166/0/1 pass/fail/timeout/crash]
+[starting test 398/436: org.jfree.chart.renderer.xy.junit.StackedXYAreaRendererTests#testCloning]
+[should take at most: 6 mutants (originally 199) * 760ms/mutant = 4.56s]
+[actually took 0.536s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 399/436: org.jfree.chart.renderer.xy.junit.StackedXYAreaRendererTests#testDrawWithNullInfo]
+[should take at most: 173 mutants (originally 1578) * 724ms/mutant = 125.252s]
+worker exited without responding
+killing worker
+kill: sending signal to 451 failed: No such process
+Warning: 'kill -9 451' exited with status 1
+Created worker with pid 837
+[actually took 20.816s; 7/166/0/1 pass/fail/timeout/crash]
+[starting test 400/436: org.jfree.chart.renderer.xy.junit.StackedXYAreaRendererTests#testEquals]
+[should take at most: 6 mutants (originally 151) * 752ms/mutant = 4.512s]
+[actually took 0.508s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 401/436: org.jfree.chart.renderer.xy.junit.StackedXYAreaRendererTests#testFindRangeBounds]
+[should take at most: 172 mutants (originally 941) * 920ms/mutant = 158.24s]
+worker exited without responding
+killing worker
+kill: sending signal to 837 failed: No such process
+Warning: 'kill -9 837' exited with status 1
+Created worker with pid 1215
+[actually took 19.945s; 3/169/0/1 pass/fail/timeout/crash]
+[starting test 402/436: org.jfree.chart.renderer.xy.junit.StackedXYAreaRendererTests#testHashcode]
+[should take at most: 7 mutants (originally 193) * 720ms/mutant = 5.04s]
+[actually took 0.624s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 403/436: org.jfree.chart.renderer.xy.junit.StackedXYAreaRendererTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 147) * 1040ms/mutant = 6.24s]
+[actually took 0.552s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 404/436: org.jfree.chart.renderer.xy.junit.StackedXYAreaRendererTests#testSerialization]
+[should take at most: 7 mutants (originally 338) * 768ms/mutant = 5.376s]
+[actually took 0.664s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 405/436: org.jfree.chart.renderer.xy.junit.StackedXYBarRendererTests#testCloning]
+[should take at most: 7 mutants (originally 338) * 712ms/mutant = 4.984s]
+[actually took 0.656s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 406/436: org.jfree.chart.renderer.xy.junit.StackedXYBarRendererTests#testEquals]
+[should take at most: 7 mutants (originally 302) * 992ms/mutant = 6.944s]
+[actually took 0.692s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 407/436: org.jfree.chart.renderer.xy.junit.StackedXYBarRendererTests#testFindDomainBounds]
+[should take at most: 172 mutants (originally 960) * 784ms/mutant = 134.848s]
+worker exited without responding
+killing worker
+kill: sending signal to 1215 failed: No such process
+Warning: 'kill -9 1215' exited with status 1
+Created worker with pid 1665
+[actually took 19.581s; 3/169/0/1 pass/fail/timeout/crash]
+[starting test 408/436: org.jfree.chart.renderer.xy.junit.StackedXYBarRendererTests#testFindRangeBounds]
+[should take at most: 172 mutants (originally 960) * 724ms/mutant = 124.528s]
+worker exited without responding
+killing worker
+kill: sending signal to 1665 failed: No such process
+Warning: 'kill -9 1665' exited with status 1
+Created worker with pid 2032
+[actually took 19.673s; 3/169/0/1 pass/fail/timeout/crash]
+[starting test 409/436: org.jfree.chart.renderer.xy.junit.StackedXYBarRendererTests#testHashcode]
+[should take at most: 7 mutants (originally 343) * 960ms/mutant = 6.72s]
+[actually took 0.64s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 410/436: org.jfree.chart.renderer.xy.junit.StackedXYBarRendererTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 161) * 1040ms/mutant = 6.24s]
+[actually took 0.72s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 411/436: org.jfree.chart.renderer.xy.junit.StackedXYBarRendererTests#testSerialization]
+[should take at most: 23 mutants (originally 500) * 820ms/mutant = 18.86s]
+[actually took 2.367s; 16/8/0/0 pass/fail/timeout/crash]
+[starting test 412/436: org.jfree.chart.renderer.xy.junit.StandardXYItemRendererTests#testCloning]
+[should take at most: 23 mutants (originally 351) * 1072ms/mutant = 24.656s]
+[actually took 1.992s; 5/19/0/0 pass/fail/timeout/crash]
+[starting test 413/436: org.jfree.chart.renderer.xy.junit.StandardXYItemRendererTests#testEquals]
+[should take at most: 23 mutants (originally 316) * 688ms/mutant = 15.824s]
+[actually took 1.976s; 5/19/0/0 pass/fail/timeout/crash]
+[starting test 414/436: org.jfree.chart.renderer.xy.junit.StandardXYItemRendererTests#testGetLegendItemSeriesIndex]
+[should take at most: 172 mutants (originally 956) * 688ms/mutant = 118.336s]
+worker exited without responding
+killing worker
+kill: sending signal to 2032 failed: No such process
+Warning: 'kill -9 2032' exited with status 1
+Created worker with pid 2594
+[actually took 19.897s; 8/164/0/1 pass/fail/timeout/crash]
+[starting test 415/436: org.jfree.chart.renderer.xy.junit.StandardXYItemRendererTests#testHashcode]
+[should take at most: 7 mutants (originally 323) * 992ms/mutant = 6.944s]
+[actually took 0.62s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 416/436: org.jfree.chart.renderer.xy.junit.StandardXYItemRendererTests#testNoDisplayedItem]
+[should take at most: 172 mutants (originally 1656) * 998ms/mutant = 171.656s]
+worker exited without responding
+killing worker
+kill: sending signal to 2594 failed: No such process
+Warning: 'kill -9 2594' exited with status 1
+Created worker with pid 2992
+[actually took 20.675s; 6/166/0/1 pass/fail/timeout/crash]
+[starting test 417/436: org.jfree.chart.renderer.xy.junit.StandardXYItemRendererTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 145) * 848ms/mutant = 5.088s]
+[actually took 0.524s; 2/5/0/0 pass/fail/timeout/crash]
+[starting test 418/436: org.jfree.chart.renderer.xy.junit.StandardXYItemRendererTests#testSerialization]
+[should take at most: 7 mutants (originally 465) * 812ms/mutant = 5.684s]
+[actually took 0.747s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 419/436: org.jfree.chart.renderer.xy.junit.XYBarRendererTests#testCloning]
+[should take at most: 7 mutants (originally 324) * 784ms/mutant = 5.488s]
+[actually took 0.648s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 420/436: org.jfree.chart.renderer.xy.junit.XYBarRendererTests#testEquals]
+[should take at most: 7 mutants (originally 292) * 792ms/mutant = 5.544s]
+[actually took 0.652s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 421/436: org.jfree.chart.renderer.xy.junit.XYBarRendererTests#testFindDomainBounds]
+[should take at most: 172 mutants (originally 927) * 856ms/mutant = 147.232s]
+worker exited without responding
+killing worker
+kill: sending signal to 2992 failed: No such process
+Warning: 'kill -9 2992' exited with status 1
+Created worker with pid 3416
+[actually took 20.017s; 3/169/0/1 pass/fail/timeout/crash]
+[starting test 422/436: org.jfree.chart.renderer.xy.junit.XYBarRendererTests#testFindRangeBounds]
+[should take at most: 15 mutants (originally 166) * 752ms/mutant = 11.28s]
+[actually took 1.532s; 2/14/0/0 pass/fail/timeout/crash]
+[starting test 423/436: org.jfree.chart.renderer.xy.junit.XYBarRendererTests#testGetLegendItemSeriesIndex]
+[should take at most: 172 mutants (originally 905) * 808ms/mutant = 138.976s]
+worker exited without responding
+killing worker
+kill: sending signal to 3416 failed: No such process
+Warning: 'kill -9 3416' exited with status 1
+Created worker with pid 3809
+[actually took 20.113s; 8/164/0/1 pass/fail/timeout/crash]
+[starting test 424/436: org.jfree.chart.renderer.xy.junit.XYBarRendererTests#testHashcode]
+[should take at most: 7 mutants (originally 313) * 776ms/mutant = 5.432s]
+[actually took 0.616s; 4/4/0/0 pass/fail/timeout/crash]
+[starting test 425/436: org.jfree.chart.renderer.xy.junit.XYBarRendererTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 131) * 696ms/mutant = 4.176s]
+[actually took 0.568s; 3/4/0/0 pass/fail/timeout/crash]
+[starting test 426/436: org.jfree.chart.renderer.xy.junit.XYBarRendererTests#testSerialization]
+[should take at most: 7 mutants (originally 456) * 752ms/mutant = 5.264s]
+[actually took 0.723s; 4/4/0/0 pass/fail/timeout/crash]
+[starting test 427/436: org.jfree.chart.renderer.xy.junit.XYBarRendererTests#testSerialization2]
+[should take at most: 7 mutants (originally 474) * 756ms/mutant = 5.292s]
+[actually took 0.767s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 428/436: org.jfree.chart.renderer.xy.junit.XYLineAndShapeRendererTests#testCloning]
+[should take at most: 23 mutants (originally 350) * 1064ms/mutant = 24.472s]
+[actually took 1.964s; 1/23/0/0 pass/fail/timeout/crash]
+[starting test 429/436: org.jfree.chart.renderer.xy.junit.XYLineAndShapeRendererTests#testEquals]
+[should take at most: 23 mutants (originally 315) * 736ms/mutant = 16.928s]
+[actually took 1.94s; 5/19/0/0 pass/fail/timeout/crash]
+[starting test 430/436: org.jfree.chart.renderer.xy.junit.XYLineAndShapeRendererTests#testEquals2]
+[should take at most: 7 mutants (originally 281) * 728ms/mutant = 5.096s]
+[actually took 0.684s; 3/5/0/0 pass/fail/timeout/crash]
+[starting test 431/436: org.jfree.chart.renderer.xy.junit.XYLineAndShapeRendererTests#testFindDomainBounds]
+[should take at most: 172 mutants (originally 930) * 752ms/mutant = 129.344s]
+worker exited without responding
+killing worker
+kill: sending signal to 3809 failed: No such process
+Warning: 'kill -9 3809' exited with status 1
+Created worker with pid 4344
+[actually took 19.841s; 3/169/0/1 pass/fail/timeout/crash]
+[starting test 432/436: org.jfree.chart.renderer.xy.junit.XYLineAndShapeRendererTests#testFindRangeBounds]
+[should take at most: 172 mutants (originally 930) * 960ms/mutant = 165.12s]
+worker exited without responding
+killing worker
+kill: sending signal to 4344 failed: No such process
+Warning: 'kill -9 4344' exited with status 1
+Created worker with pid 4705
+[actually took 19.925s; 3/169/0/1 pass/fail/timeout/crash]
+[starting test 433/436: org.jfree.chart.renderer.xy.junit.XYLineAndShapeRendererTests#testGetLegendItemSeriesIndex]
+[should take at most: 172 mutants (originally 953) * 856ms/mutant = 147.232s]
+worker exited without responding
+killing worker
+kill: sending signal to 4705 failed: No such process
+Warning: 'kill -9 4705' exited with status 1
+Created worker with pid 5066
+[actually took 19.881s; 8/164/0/1 pass/fail/timeout/crash]
+[starting test 434/436: org.jfree.chart.renderer.xy.junit.XYLineAndShapeRendererTests#testHashcode]
+[should take at most: 7 mutants (originally 306) * 760ms/mutant = 5.32s]
+[actually took 0.656s; 4/4/0/0 pass/fail/timeout/crash]
+[starting test 435/436: org.jfree.chart.renderer.xy.junit.XYLineAndShapeRendererTests#testPublicCloneable]
+[should take at most: 6 mutants (originally 128) * 1096ms/mutant = 6.576s]
+[actually took 0.564s; 3/4/0/0 pass/fail/timeout/crash]
+[starting test 436/436: org.jfree.chart.renderer.xy.junit.XYLineAndShapeRendererTests#testSerialization]
+[should take at most: 7 mutants (originally 437) * 784ms/mutant = 5.488s]
+[actually took 0.715s; 4/4/0/0 pass/fail/timeout/crash]
+killing worker
+Completed successfully!
+
+real	92m10.587s
+user	61m48.092s
+sys	2m55.504s
